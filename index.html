@@ -92,6 +92,7 @@ h2.title{font:700 64px/1.05 var(--sans);letter-spacing:-.035em;text-wrap:balance
 .b27{font-size:27px;line-height:1.38}
 .b24{font-size:24px;line-height:1.42}
 .b22{font-size:22px;line-height:1.42}
+.b20{font-size:20px;line-height:1.4}
 .mut{color:var(--muted)}
 .dim{color:var(--dim)}
 .wh{color:var(--text)}
@@ -129,10 +130,6 @@ h2.title{font:700 64px/1.05 var(--sans);letter-spacing:-.035em;text-wrap:balance
 .chip.amber{color:var(--amber);border-color:rgba(255,181,71,.42);background:var(--amber-s)}
 .chip.violet{color:#C4B2FF;border-color:rgba(167,139,250,.45);background:var(--violet-s)}
 .chip.plain::before{display:none}
-.more{display:inline-flex;align-items:center;gap:12px;font:600 23px/1 var(--sans);color:var(--text);padding:15px 22px 15px 24px;border-radius:14px;
-  background:rgba(255,255,255,.07);border:1px solid var(--edge2);transition:background .2s,border-color .2s,translate .2s}
-.more:hover{background:rgba(255,255,255,.13);border-color:rgba(255,255,255,.3);translate:0 -2px}
-.more svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
 .ico{width:46px;height:46px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:none;stroke-dasharray:90}
 .slide.active .ico{animation:dashIn 1.6s ease both;animation-delay:calc(var(--i,0) * 80ms + 320ms)}
 @keyframes dashIn{from{stroke-dashoffset:90}to{stroke-dashoffset:0}}
@@ -172,18 +169,16 @@ h2.title{font:700 64px/1.05 var(--sans);letter-spacing:-.035em;text-wrap:balance
 .ghost{display:inline-flex;align-items:center;gap:12px;background:rgba(255,255,255,.1);border:1px solid var(--edge2);color:#fff;font:700 28px/1 var(--sans);padding:20px 34px;border-radius:12px;transition:background .2s}
 .ghost:hover{background:rgba(255,255,255,.18)}
 
-/* ---------------- process (slide 2) ---------------- */
-.steps{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:26px 26px}
-.step{display:flex;flex-direction:column;gap:12px;padding:30px 32px 28px;cursor:pointer;min-height:224px}
-.step .n{font:800 46px/1 var(--sans);letter-spacing:-.03em;background:linear-gradient(90deg,var(--blue),#FF4D57);-webkit-background-clip:text;background-clip:text;color:transparent}
-.step .h{font:700 32px/1.1 var(--sans);letter-spacing:-.015em}
-.step .d{font-size:24px;line-height:1.38;color:var(--muted)}
-.step .o{margin-top:auto;display:flex;align-items:center;gap:10px;font:600 21px/1.3 var(--sans);color:var(--text)}
-.step .o::before{content:"";width:22px;height:2px;background:var(--blue);flex:none}
-.step .go{position:absolute;right:26px;top:28px;width:30px;height:30px;stroke:var(--dim);fill:none;stroke-width:2;transition:stroke .2s,translate .2s}
-.step:hover .go{stroke:#fff;translate:3px -3px}
-.loop{display:flex;align-items:center;gap:14px;font:600 22px/1.3 var(--sans);color:var(--violet)}
-.loop svg{width:40px;height:26px;stroke:var(--violet);fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+/* ---------------- agenda (slide 2) ---------------- */
+.agenda{position:relative;display:grid;grid-template-columns:repeat(5,1fr);gap:24px;margin:auto 0;padding-bottom:40px}
+.ag-track{position:absolute;left:10%;right:10%;top:31px;height:3px;border-radius:2px;background:#262A38}
+.ag-track i{position:absolute;inset:0;border-radius:2px;background:linear-gradient(90deg,var(--blue),#FF4D57)}
+.ag{position:relative;display:flex;flex-direction:column;align-items:center;gap:26px}
+.ag-n{position:relative;z-index:1;width:64px;height:64px;border-radius:50%;display:grid;place-items:center;font:700 23px/1 var(--mono);color:#fff;
+  background:#0E1019;border:2px solid rgba(255,255,255,.28);box-shadow:0 0 0 8px var(--bg)}
+.ag-c{width:100%;min-height:230px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;text-align:center;padding:30px 24px}
+.ag-c b{font:700 33px/1.12 var(--sans);letter-spacing:-.02em;text-wrap:balance}
+.ag-c span{font-size:22px;line-height:1.38;color:var(--muted);text-wrap:balance}
 
 /* ---------------- problem (slide 3) ---------------- */
 .big{font:800 150px/.9 var(--sans);letter-spacing:-.055em;font-variant-numeric:tabular-nums;white-space:nowrap}
@@ -204,16 +199,9 @@ h2.title{font:700 64px/1.05 var(--sans);letter-spacing:-.035em;text-wrap:balance
 .tag-assume{display:inline-flex;align-items:center;gap:10px;font:600 19px/1.2 var(--sans);color:var(--amber)}
 .tag-assume::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--amber)}
 .today{display:flex;align-items:center;gap:22px;padding:22px 30px;border-radius:18px;border:1px dashed rgba(255,255,255,.16);background:rgba(255,255,255,.025)}
+.pc{gap:24px;padding:36px 40px}
+.pc-f{margin-top:auto;padding-top:22px;border-top:1px solid var(--edge)}
 
-/* ---------------- who (slide 4) ---------------- */
-.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
-.it{display:flex;flex-direction:column;gap:6px;padding:18px 0;border-top:1px solid var(--edge)}
-.it:first-of-type{border-top:0;padding-top:4px}
-.it b{font:650 26px/1.28 var(--sans);font-weight:650;color:var(--text)}
-.it span{font-size:22px;line-height:1.4;color:var(--muted)}
-.hd{display:flex;align-items:center;gap:14px;margin-bottom:10px}
-.hd .ico{width:38px;height:38px}
-.hd h3{font:700 30px/1 var(--sans);letter-spacing:-.01em}
 
 /* ---------------- metrics (slide 5) ---------------- */
 .mcard{display:flex;flex-direction:column;gap:14px;padding:30px 32px}
@@ -221,9 +209,7 @@ h2.title{font:700 64px/1.05 var(--sans);letter-spacing:-.035em;text-wrap:balance
 .mcard .v{display:flex;align-items:baseline;gap:14px;font-size:23px;color:var(--muted)}
 .mcard .v b{font:800 44px/1 var(--sans);letter-spacing:-.03em;color:var(--text)}
 .mcard .arrow{color:var(--dim);font-size:26px}
-.dil{position:relative;height:40px;border-radius:10px;overflow:hidden;background:rgba(255,255,255,.07)}
-.dil i{position:absolute;left:0;top:0;bottom:0;width:8%;background:linear-gradient(90deg,var(--red),#FF4D57)}
-.dil span{position:absolute;top:50%;transform:translateY(-50%);font:600 18px/1 var(--sans)}
+.mcard .v b.c-blue{color:var(--blue)}.mcard .v b.c-violet{color:var(--violet)}
 
 /* ---------------- idea (slide 6) ---------------- */
 .statement{font:700 58px/1.12 var(--sans);letter-spacing:-.03em;max-width:1500px;text-wrap:balance}
@@ -253,18 +239,8 @@ h2.title{font:700 64px/1.05 var(--sans);letter-spacing:-.035em;text-wrap:balance
 .etl .lim span{position:absolute;top:-26px;left:50%;transform:translateX(-50%);white-space:nowrap;font:600 17px/1 var(--sans);color:#fff}
 .outcome{font:600 22px/1.35 var(--sans);color:var(--text);display:flex;gap:10px;align-items:flex-start}
 
-/* ---------------- scope (slide 8) ---------------- */
-.lst .li{display:flex;align-items:center;gap:18px;padding:13px 0;border-top:1px solid var(--edge);font-size:26px;line-height:1.3}
-.lst .li:first-child{border-top:0}
-.lst.out .li{justify-content:space-between;color:var(--muted)}
-.trade{display:flex;align-items:center;gap:24px;padding:22px 30px;border-radius:18px;border:1px solid rgba(255,181,71,.35);background:linear-gradient(90deg,rgba(255,181,71,.12),rgba(255,181,71,.02) 70%)}
 
 /* ---------------- RICE (slide 9) ---------------- */
-.formula{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
-.fx{display:flex;flex-direction:column;gap:6px;padding:14px 20px;border-radius:14px;border:1px solid var(--edge);background:rgba(255,255,255,.04)}
-.fx b{font:700 24px/1 var(--sans)}
-.fx span{font-size:17px;color:var(--muted)}
-.op{font:500 30px/1 var(--sans);color:var(--dim)}
 table.rice{width:100%;border-collapse:collapse;font-size:23px;font-variant-numeric:tabular-nums}
 table.rice th{font:600 16px/1.2 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--dim);text-align:right;padding:0 14px 12px;white-space:nowrap}
 table.rice td{padding:9px 14px;text-align:right;border-top:1px solid var(--edge)}
@@ -286,7 +262,8 @@ table.rice tr.cut td{border:0;padding:6px 0}
 @keyframes rowIn{from{opacity:0;transform:translateX(-24px)}to{opacity:1;transform:none}}
 .slide.active table.rice tr.out td{animation:dim 1s ease both;animation-delay:1.8s}
 @keyframes dim{from{color:#fff}to{color:var(--muted)}}
-.calc{display:flex;flex-direction:column;gap:18px;padding:30px}
+.calc{display:flex;flex-direction:column;gap:16px;padding:30px;min-height:560px}
+.calc .fxl{font:600 18px/1.3 var(--sans);color:var(--muted);padding:10px 14px;border-radius:10px;background:rgba(255,255,255,.05);border:1px solid var(--edge)}
 .calc .eq{font:600 30px/1.35 var(--sans);letter-spacing:-.01em}
 .calc .eq .op2{color:var(--dim);margin:0 6px}
 .calc .res{font:800 76px/1 var(--sans);letter-spacing:-.04em}
@@ -317,17 +294,37 @@ table.rice tr.cut td{border:0;padding:6px 0}
 .slide.active .kill{animation:ul 1s ease forwards 1.6s}
 @keyframes ul{to{background-size:100% 2px}}
 
-/* ---------------- requirements (slide 12) ---------------- */
-.req{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.rq{display:flex;flex-direction:column;gap:12px;padding:28px 30px}
-.rq .top{display:flex;align-items:center;justify-content:space-between}
-.rq .top b{font:700 28px/1.1 var(--sans);letter-spacing:-.01em}
-.rq .cnt{font:700 20px/1 var(--sans);color:var(--dim)}
-.rq p{font-size:23px;line-height:1.42;color:var(--muted)}
-.mosc{cursor:pointer;border:1px solid rgba(94,139,255,.45);background:linear-gradient(180deg,rgba(94,139,255,.16),rgba(94,139,255,.04))}
-.mosc .mm{font:800 50px/1.05 var(--sans);letter-spacing:-.03em}
-.mbar{display:flex;height:14px;border-radius:7px;overflow:hidden;background:rgba(255,255,255,.06)}
-.mbar i{display:block;height:100%}
+/* ---------------- requirements: MoSCoW board ---------------- */
+.mosc{display:grid;grid-template-columns:400px 1fr;gap:26px;height:560px;flex:none}
+.mtabs{display:flex;flex-direction:column;gap:14px}
+.mtab{flex:1;display:flex;align-items:center;gap:20px;padding:18px 22px;border-radius:18px;border:1px solid var(--edge);background:rgba(255,255,255,.03);transition:background .25s,border-color .25s,translate .25s}
+.mtab:hover{background:rgba(255,255,255,.07);translate:4px 0}
+.mtab .ml{flex:none;width:58px;height:58px;border-radius:14px;display:grid;place-items:center;font:800 30px/1 var(--sans);color:#0B0C12;background:#5A6072}
+.mtab .mt{flex:1;display:flex;flex-direction:column;gap:6px}
+.mtab .mt b{font:700 28px/1 var(--sans);letter-spacing:-.01em}
+.mtab .mt small{font-size:19px;color:var(--muted)}
+.mtab .mc{font:800 44px/1 var(--sans);letter-spacing:-.03em;color:var(--dim);font-variant-numeric:tabular-nums}
+.mtab.m .ml{background:var(--green)}.mtab.s .ml{background:var(--blue)}.mtab.w .ml{background:#8A90A3}
+.mtab.on{background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.34)}
+.mtab.on .mc{color:#fff}
+.mtab.m.on{border-color:rgba(53,212,154,.6);background:linear-gradient(90deg,rgba(53,212,154,.16),rgba(53,212,154,.03))}
+.mtab.s.on{border-color:rgba(94,139,255,.6);background:linear-gradient(90deg,rgba(94,139,255,.18),rgba(94,139,255,.03))}
+.mpanel{padding:30px 38px;display:flex}
+.mlist{display:none;width:100%;align-content:start}
+.mlist.on{display:grid;grid-template-columns:1fr;gap:0 44px}
+.mlist.on.two-c{grid-template-columns:1fr 1fr;grid-auto-flow:column;grid-template-rows:repeat(7,auto)}
+.mlist.on.wont{grid-template-rows:repeat(4,auto)}
+.mlist li{position:relative;display:flex;align-items:center;align-content:flex-start;flex-wrap:wrap;gap:6px 12px;padding:14px 0 14px 26px;border-top:1px solid var(--edge);font-size:24px;line-height:1.3;animation:mIn .45s cubic-bezier(.2,.7,.2,1) both}
+.mlist li::before{content:"";position:absolute;left:2px;top:25px;width:10px;height:10px;border-radius:3px;background:var(--green)}
+.mlist[data-b="should"] li::before{background:var(--blue)}
+.mlist.wont li{justify-content:space-between;color:var(--muted)}
+.mlist.wont li::before{background:#5A6072}
+.mlist li small{flex-basis:100%;font-size:19px;color:var(--muted)}
+.mlist li:nth-child(1),.mlist.two-c li:nth-child(8){border-top:0}
+.mlist.wont li:nth-child(5){border-top:0}
+.mlist.two-c:not(.wont) li:nth-child(8){border-top:0}
+.mlist li:nth-child(2){animation-delay:30ms}.mlist li:nth-child(3){animation-delay:60ms}.mlist li:nth-child(4){animation-delay:90ms}.mlist li:nth-child(5){animation-delay:120ms}.mlist li:nth-child(6){animation-delay:150ms}.mlist li:nth-child(7){animation-delay:180ms}.mlist li:nth-child(8){animation-delay:210ms}.mlist li:nth-child(9){animation-delay:240ms}.mlist li:nth-child(10){animation-delay:270ms}.mlist li:nth-child(11){animation-delay:300ms}.mlist li:nth-child(12){animation-delay:330ms}.mlist li:nth-child(13){animation-delay:360ms}
+@keyframes mIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 .newtag{display:inline-flex;align-items:center;font:700 15px/1 var(--sans);letter-spacing:.08em;text-transform:uppercase;color:#C4B2FF;background:var(--violet-s);border:1px solid rgba(167,139,250,.45);border-radius:6px;padding:5px 8px}
 .newtag.upd{color:var(--amber);background:var(--amber-s);border-color:rgba(255,181,71,.45)}
 
@@ -446,7 +443,11 @@ table.rice tr.cut td{border:0;padding:6px 0}
 
 /* ---------------- learnings (slide 21) ---------------- */
 .learn{flex:1;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:24px}
+.learn.three{grid-template-columns:repeat(3,1fr);grid-template-rows:1fr;max-height:540px;margin-top:10px}
+.learn.three .lc p{font-size:30px;line-height:1.42}
 .lc{display:flex;flex-direction:column;gap:16px;padding:40px 44px}
+.learn.three .lc{gap:26px;padding:44px 40px}
+.learn.three .lc .h{flex-direction:column;align-items:flex-start;gap:18px}
 .lc .h{display:flex;align-items:center;gap:16px}
 .lc .h .ico{width:48px;height:48px}
 .lc .h b{font:700 34px/1.15 var(--sans);letter-spacing:-.015em}
@@ -465,24 +466,15 @@ table.rice tr.cut td{border:0;padding:6px 0}
 .clock .tt b{font:700 44px/1 var(--mono)}
 .clock .tt span{font:600 15px/1 var(--sans);letter-spacing:.2em;color:var(--muted)}
 
-/* ---------------- sheets (click-open detail) ---------------- */
-.sheet{position:absolute;inset:0;z-index:40;display:flex;align-items:center;justify-content:center;padding:36px 100px 36px;background:rgba(4,5,9,.72);
-  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);opacity:0;visibility:hidden;transition:opacity .3s ease,visibility 0s linear .3s}
-.sheet.open{opacity:1;visibility:visible;transition:opacity .3s ease,visibility 0s}
-.sheet .panel{position:relative;width:100%;max-width:1640px;max-height:100%;display:flex;flex-direction:column;border-radius:26px;border:1px solid var(--edge2);
-  background:linear-gradient(180deg,#141725,#0D0F18);box-shadow:0 40px 120px rgba(0,0,0,.6);transform:translateY(24px) scale(.985);transition:transform .35s cubic-bezier(.2,.7,.2,1)}
-.sheet.open .panel{transform:none}
-.sheet .phd{display:flex;align-items:flex-start;justify-content:space-between;gap:30px;padding:34px 40px 22px;border-bottom:1px solid var(--edge)}
-.sheet .phd h3{font:700 40px/1.1 var(--sans);letter-spacing:-.02em}
-.sheet .phd p{margin-top:10px;font-size:22px;line-height:1.4;color:var(--muted);max-width:1200px}
-.x{flex:none;width:52px;height:52px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.08);border:1px solid var(--edge2);transition:background .2s}
-.x:hover{background:rgba(255,255,255,.16)}
-.x svg{width:22px;height:22px;stroke:#fff;stroke-width:2.4;fill:none;stroke-linecap:round}
-.sheet .pbd{padding:24px 40px 34px;overflow:auto}
-.sheet .pbd::-webkit-scrollbar{width:8px}.sheet .pbd::-webkit-scrollbar-thumb{background:#2B2F3E;border-radius:4px}
+/* ---------------- appendix ---------------- */
+.slide.appx{padding-top:92px;gap:30px}
+.apx-h{display:flex;align-items:center;gap:22px}
 table.st{width:100%;border-collapse:collapse;font-size:19px;line-height:1.36}
 table.st.tight{font-size:18px;line-height:1.32}
+table.st.apx{font-size:21px;line-height:1.4}
+table.st.tight.apx{font-size:19px;line-height:1.3}
 table.st.tight td{padding:7px 14px 7px 0}
+table.st.tight.apx td{padding:6px 16px 6px 0}
 table.st th{font:600 15px/1.2 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--dim);text-align:left;padding:0 16px 10px 0;vertical-align:bottom}
 table.st td{padding:10px 16px 10px 0;border-top:1px solid var(--edge);vertical-align:top;color:#D5D8E3}
 table.st td:first-child{color:#fff;font-weight:600}
@@ -507,9 +499,8 @@ table.st tr.grp td{padding-top:20px;border-top:0;color:var(--blue);font:700 16px
 /* ---------------- tracker + HUD ---------------- */
 .gtrk{position:absolute;left:114px;top:44px;display:flex;align-items:center;gap:2px;z-index:15;transition:opacity .45s ease,transform .45s ease}
 .gtrk.hide{opacity:0;transform:translateY(-8px);pointer-events:none}
-.gtrk button{font:600 19px/1 var(--sans);letter-spacing:.02em;color:var(--dim);padding:14px 14px 18px;border-radius:8px;transition:color .3s}
-.gtrk button:hover{color:#fff}
-.gtrk button.on{color:#fff}
+.gtrk .t{font:600 19px/1 var(--sans);letter-spacing:.02em;color:var(--dim);padding:14px 14px 18px;transition:color .3s}
+.gtrk .t.on{color:#fff}
 .gtrk .sep{color:#353949;font-size:18px}
 .gtrk .ind{position:absolute;bottom:6px;left:0;width:0;height:2px;border-radius:1px;background:linear-gradient(90deg,var(--blue),#FF4D57);transition:left .6s cubic-bezier(.2,.7,.2,1),width .6s cubic-bezier(.2,.7,.2,1)}
 .keyhint{position:absolute;right:128px;top:52px;font:500 18px/1 var(--sans);color:var(--dim);z-index:15;opacity:0;transition:opacity .5s;display:flex;align-items:center;gap:8px;pointer-events:none}
@@ -519,11 +510,8 @@ kbd{font:600 16px/1 var(--sans);color:var(--muted);border:1px solid #3A3E4E;bord
 .brand{font:500 20px/1 var(--sans);color:var(--muted);letter-spacing:.02em;white-space:nowrap}
 .brand b{color:#fff;font-weight:700}
 .scrub{flex:1;position:relative;height:40px;display:flex;align-items:center;gap:6px}
-.seg{position:relative;height:6px;border-radius:3px;background:#262A38;cursor:pointer;transition:height .2s}
-.seg:hover{height:10px}
-.seg i{position:absolute;inset:0;width:0;background:linear-gradient(90deg,#FF4D57,var(--red));border-radius:3px;transition:width .6s cubic-bezier(.2,.7,.2,1)}
-.seg .sl2{position:absolute;bottom:22px;left:0;font:600 16px/1 var(--sans);color:var(--muted);white-space:nowrap;opacity:0;transform:translateY(6px);transition:.2s;pointer-events:none}
-.seg:hover .sl2{opacity:1;transform:none}
+.scrub .seg{position:relative;height:6px;border-radius:3px;background:#262A38}
+.scrub .seg i{position:absolute;inset:0;width:0;background:linear-gradient(90deg,#FF4D57,var(--red));border-radius:3px;transition:width .6s cubic-bezier(.2,.7,.2,1)}
 .knob{position:absolute;top:50%;width:22px;height:22px;margin:-11px 0 0 -11px;border-radius:50%;background:var(--red);box-shadow:0 0 0 6px var(--red-s);transition:left .6s cubic-bezier(.2,.7,.2,1);pointer-events:none}
 .tc{font:500 21px/1 var(--mono);color:var(--muted);white-space:nowrap;font-variant-numeric:tabular-nums}
 .tc b{color:#fff}
@@ -591,7 +579,7 @@ kbd{font:600 16px/1 var(--sans);color:var(--muted);border:1px solid #3A3E4E;bord
 <div class="stage" id="stage">
 <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
 <!-- 1 · TITLE -->
-<section class="slide hero" data-sec="0" data-title="2-Hour Night Mode">
+<section class="slide hero" data-grp="Opening" data-title="2-Hour Night Mode">
   <div class="glow hero-pulse"></div>
   <p class="kicker rv">Netflix · PRD</p>
   <h1 class="split" data-mode="c" style="--step:42ms;--start:300ms">2-Hour Night Mode</h1>
@@ -606,163 +594,105 @@ kbd{font:600 16px/1 var(--sans);color:var(--muted);border:1px solid #3A3E4E;bord
   <p class="team">Maayan Nakav &amp; Tal Shami · Planning Products · Final project · September 2026</p>
 </section>
 
-<!-- 2 · HOW WE GOT HERE -->
-<section class="slide" data-sec="0" data-title="How we got here">
-  <h2 class="title rv">How we got here</h2>
-  <div class="steps">
-    <button class="card step rv" data-go="2"><svg class="go" viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg>
-      <span class="n">01</span><span class="h">Evidence</span><span class="d">Looked at how people choose what to watch at night.</span><span class="o">14 min to choose. 1 in 5 give up.</span></button>
-    <button class="card step rv" data-go="5"><svg class="go" viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg>
-      <span class="n">02</span><span class="h">A lesson</span><span class="d">Studied Netflix's own shuffle button, removed after low use.</span><span class="o">Rule: never choose for the member.</span></button>
-    <button class="card step rv" data-go="6"><svg class="go" viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg>
-      <span class="n">03</span><span class="h">Scenarios</span><span class="d">Wrote two real evenings: two hours, and forty minutes.</span><span class="o">A main flow and an edge case.</span></button>
-    <button class="card step rv" data-go="8"><svg class="go" viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg>
-      <span class="n">04</span><span class="h">Priorities</span><span class="d">Scored ten scope ideas with RICE.</span><span class="o">The launch line fell at 0.80.</span></button>
-    <button class="card step rv" data-go="11"><svg class="go" viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg>
-      <span class="n">05</span><span class="h">Requirements</span><span class="d">Defined the behavior, the success metrics and the A/B test.</span><span class="o">19 requirements, one primary metric.</span></button>
-    <button class="card step rv" data-go="13"><svg class="go" viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg>
-      <span class="n">06</span><span class="h">Screens</span><span class="d">Sketched six low-fidelity screens.</span><span class="o">Two gaps found, the requirements updated.</span></button>
-  </div>
-  <div class="row rv" style="justify-content:space-between;align-items:center;gap:40px">
-    <p class="loop"><svg viewBox="0 0 40 26"><path d="M36 6H10a6 6 0 00-6 6v0a6 6 0 006 6h24"/><path d="M29 12l6 6-6 6"/></svg>Sketching the screens raised two questions, so we went back and updated step 05.</p>
-    <button class="more" data-open="sh-decisions">Decisions we made, and what we rejected<svg viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg></button>
+<!-- 2 · AGENDA -->
+<section class="slide" data-grp="Opening" data-title="Agenda">
+  <h2 class="title rv">Agenda</h2>
+  <div class="agenda">
+    <div class="ag-track"><i class="draw" style="--i:1"></i></div>
+    <div class="ag rv"><span class="ag-n">01</span><div class="card ag-c"><b>Problem &amp; goal</b><span>Why evenings fail, and our goal</span></div></div>
+    <div class="ag rv"><span class="ag-n">02</span><div class="card ag-c"><b>Solution</b><span>The idea, and two evenings</span></div></div>
+    <div class="ag rv"><span class="ag-n">03</span><div class="card ag-c"><b>Requirements</b><span>What it must do, and how well</span></div></div>
+    <div class="ag rv"><span class="ag-n">04</span><div class="card ag-c"><b>Scope &amp; risks</b><span>What launches first, and what could fail</span></div></div>
+    <div class="ag rv"><span class="ag-n">05</span><div class="card ag-c"><b>Screens</b><span>An evening from 21:00 to 22:55</span></div></div>
   </div>
 </section>
 
-<!-- 3 · PROBLEM -->
-<section class="slide" data-sec="0" data-title="Evenings get lost">
-  <h2 class="title rv">Evenings get lost</h2>
+<!-- 3 · THE PROBLEM -->
+<section class="slide" data-sec="0" data-title="The problem">
+  <h2 class="title rv">The problem</h2>
+  <p class="lead rv">Half of Netflix viewing happens in the evening. <b>For people with a fixed window, it goes wrong in two ways.</b></p>
   <div class="row" style="gap:26px;align-items:stretch">
-    <div class="card grow col rv" style="gap:20px;padding:36px 40px">
-      <span class="acc amber draw"></span>
+    <div class="card grow col rv pc"><span class="acc amber draw"></span>
       <p class="lab c-amber">Too long to choose</p>
-      <div class="row" style="align-items:flex-end;gap:28px">
+      <div class="row" style="align-items:flex-end;gap:26px">
         <p class="big c-amber"><span data-count="14">14</span><span class="u">min</span></p>
-        <p class="b24 mut" style="max-width:320px;padding-bottom:10px">average time spent choosing what to watch</p>
+        <p class="b27 mut" style="padding-bottom:14px">to choose what to watch</p>
       </div>
-      <div class="bar-tl">
-        <div class="trk"></div>
-        <div class="seg hatch-amber draw" style="left:0;width:11.7%"></div>
-        <div class="seg fill-grey" style="left:12.2%;width:87.8%;opacity:.5"></div>
-        <span class="tk l" style="left:0;top:60px">21:00</span>
-        <span style="position:absolute;left:14%;top:28px;font:600 17px/1 var(--sans);color:#fff">searching, before anything plays</span>
-        <span class="tk r" style="left:100%">23:00</span>
-      </div>
-      <div class="row" style="gap:46px;margin-top:4px">
-        <div class="col" style="gap:8px"><p class="mid"><span data-count="45">45</span>%</p><p class="b22 mut">say streaming feels overwhelming</p></div>
-        <div class="col" style="gap:8px"><p class="mid">1 in 5</p><p class="b22 mut">leave without watching anything</p></div>
+      <div class="row pc-f" style="align-items:baseline;gap:22px">
+        <p class="mid">1 in 5</p><p class="b27 mut">give up and do something else</p>
       </div>
     </div>
-    <div class="card grow col rv" style="gap:22px;padding:36px 40px">
-      <span class="acc red draw"></span>
+    <div class="card grow col rv pc"><span class="acc red draw"></span>
       <p class="lab c-red">Too long to finish</p>
-      <p class="b30 wh" style="max-width:660px">A 2.5-hour film started at 21:15 is still running at bedtime. The evening ends mid-story.</p>
-      <div class="bar-tl" style="height:100px;margin-top:18px">
+      <p class="b30 wh">A 2.5-hour film started at 21:15 ends at 23:45, long after bedtime.</p>
+      <div class="bar-tl" style="height:100px;margin-top:auto">
         <div class="trk"></div>
         <div class="seg fill-blue draw" style="left:8.3%;width:58.4%"></div>
         <div class="seg hatch-red draw" style="left:66.7%;width:25%;--i:6"></div>
-        <div class="mk" style="left:66.7%"><span>bedtime</span></div>
+        <div class="mk" style="left:66.7%;bottom:44px"><span>bedtime</span></div>
         <span class="tk l" style="left:0">21:00</span>
         <span class="tk" style="left:66.7%">23:00</span>
         <span class="tk" style="left:91.7%">23:45</span>
-        <span style="position:absolute;left:68.5%;top:30px;font:700 17px/1 var(--sans);color:#fff">45 min left</span>
+        <span style="position:absolute;left:68.5%;top:30px;font:700 17px/1 var(--sans);color:#fff">45 min over</span>
       </div>
-      <p class="tag-assume" style="margin-top:auto">Our assumption, to confirm with Netflix viewing data</p>
     </div>
   </div>
-  <div class="today rv"><span class="chip plain">Today</span><p class="b24 mut">Netflix has a "Movies under 90 minutes" row. <b class="wh">Films only, one fixed length, not personal, and it never says when a title ends.</b></p></div>
+  <div class="today rv"><span class="chip plain">Today</span><p class="b24 mut">A "Movies under 90 minutes" row. <b class="wh">Films only, and it never says when anything ends.</b></p></div>
 </section>
 
-<!-- 4 · WHO + WHY NOW -->
-<section class="slide" data-sec="0" data-title="Who it's for, and why now">
-  <h2 class="title rv">Who it's for, and why now</h2>
-  <div class="trio">
-    <div class="card col rv" style="padding:32px 34px"><span class="acc blue draw"></span>
-      <div class="hd c-blue"><svg class="ico"><use href="#i-users"/></svg><h3 class="wh">Who</h3></div>
-      <div class="it"><b>Evening viewers with a fixed window</b><span>Parents after bedtime, adults before sleep, mostly on TV</span></div>
-      <div class="it"><b>Members in the middle of a series</b><span>Series are about 3 of every 4 hours watched</span></div>
-      <div class="it"><b>Members who browse, then leave</b><span>The 1 in 5 who give up without watching</span></div>
-    </div>
-    <div class="card col rv" style="padding:32px 34px"><span class="acc amber draw"></span>
-      <div class="hd c-amber"><svg class="ico"><use href="#i-clock"/></svg><h3 class="wh">Why now</h3></div>
-      <div class="it"><b>Choosing takes longer</b><span>10.5 to 12 minutes in the US, in two years</span></div>
-      <div class="it"><b>Evening is the core window</b><span>About half of all Netflix viewing</span></div>
-      <div class="it"><b>Quality over hours</b><span>Netflix now judges engagement by quality, not hours alone</span></div>
-      <div class="it"><b>The technology exists</b><span>Netflix already uses AI to improve discovery</span></div>
-    </div>
-    <div class="card col rv" style="padding:32px 34px"><span class="acc red draw"></span>
-      <div class="hd c-red"><svg class="ico"><use href="#i-target"/></svg><h3 class="wh">Why it fits Netflix</h3></div>
-      <div class="it"><b>More entertainment value</b><span>A confident start and a finished evening</span></div>
-      <div class="it"><b>Better use of technology</b><span>Existing personalization, plus one new input: time</span></div>
-      <div class="it"><b>Stronger monetization</b><span>More value in ad-free plans, with no price change</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- 5 · SUCCESS -->
-<section class="slide" data-sec="0" data-title="What success looks like" style="gap:28px">
-  <h2 class="title rv">What success looks like</h2>
-  <p class="lead rv">Members with limited evening time <b>start watching sooner</b> and <b>finish what they start</b>, inside the time they have.</p>
-  <div class="row" style="gap:22px;align-items:stretch">
-    <div class="card mcard rv" style="flex:1.25"><span class="acc red draw"></span>
+<!-- 4 · THE GOAL -->
+<section class="slide" data-sec="0" data-title="The goal">
+  <h2 class="title rv">The goal</h2>
+  <p class="lead rv">People with little time in the evening <b>start watching sooner</b> and <b>finish what they start.</b></p>
+  <div class="row" style="gap:24px;align-items:stretch">
+    <div class="card mcard rv" style="flex:1.2"><span class="acc red draw"></span>
       <p class="lab c-red">Primary metric</p><p class="k">Time to start watching</p>
       <div class="v"><span>today</span><b>~12 min</b></div>
-      <p class="b22 mut">Goal: <b class="wh">at least 2% faster</b> than members without the feature</p>
+      <p class="b24"><b>Goal: at least 2% faster</b></p>
+      <p class="b22 mut" style="margin-top:auto">Measured on everyone in the test group, not only people who use the feature</p>
     </div>
     <div class="card mcard rv grow"><span class="acc blue draw"></span>
       <p class="lab">Secondary</p><p class="k">Finish the plan</p>
       <div class="v"><span>today</span><b>~60%</b><span class="arrow">→</span><b class="c-blue">75%</b></div>
-      <p class="b22 mut">Watched at least 90% of what they planned</p>
+      <p class="b22 mut" style="margin-top:auto">Watched at least 90% of what they planned</p>
     </div>
     <div class="card mcard rv grow"><span class="acc violet draw"></span>
       <p class="lab">Secondary</p><p class="k">Use it again</p>
       <div class="v"><b class="c-violet">30%</b><span>within 14 days</span></div>
-      <p class="b22 mut">A new feature, so there is no baseline yet</p>
+      <p class="b22 mut" style="margin-top:auto">A new feature, so there is no baseline yet</p>
     </div>
   </div>
-  <div class="row" style="gap:22px;align-items:stretch">
-    <div class="card grow col rv" style="gap:12px;padding:28px 32px">
-      <div class="row" style="justify-content:space-between;align-items:center"><p class="lab">How we test</p>
-        <button class="more" data-open="sh-metrics" style="padding:10px 16px;font-size:19px">Exact definitions<svg viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg></button></div>
-      <p class="b24"><b>A/B test, 4 weeks.</b> <span class="mut">Half of eligible members get the feature, half don't.</span></p>
-      <p class="b24"><b>Guardrails.</b> <span class="mut">Evening viewing hours and 28-day retention must not drop.</span></p>
-      <p class="b24"><b>Success.</b> <span class="mut">The primary goal is met with significance, plus at least one secondary goal.</span></p>
-    </div>
-    <div class="card grow col rv" style="gap:16px;padding:28px 32px">
-      <p class="lab">Why the goal is only 2%</p>
-      <div class="dil"><i class="draw"></i><span style="left:10%;color:#fff">sessions that use the feature: about 25% faster</span></div>
-      <p class="b22 mut">We measure <b class="wh">everyone</b> in the test group, not only the people who open the feature. Most evenings won't use it, so a big gain inside the feature shows up as a small, honest gain overall.</p>
-    </div>
-  </div>
+  <div class="today rv"><span class="chip plain">How we test</span><p class="b24 mut"><b class="wh">A/B test, 4 weeks, 50/50.</b> Evening viewing and retention must not drop.</p></div>
 </section>
 
-<!-- 6 · THE IDEA -->
+<!-- 5 · THE IDEA -->
 <section class="slide" data-sec="1" data-title="The idea">
   <h2 class="title rv">The idea</h2>
   <p class="statement rv">Tell us how much time you have. We show what fits, <em>and when it ends.</em></p>
   <div class="s3">
     <div class="card rv"><span class="n">1</span><div class="col" style="gap:8px"><b style="font-size:34px;letter-spacing:-.015em">Pick your time</b><span class="b27 mut">30 minutes to 4 hours</span></div></div>
-    <div class="card rv"><span class="n">2</span><div class="col" style="gap:8px"><b style="font-size:34px;letter-spacing:-.015em">Get up to 6 options</b><span class="b27 mut">Films and episode runs, chosen for this profile</span></div></div>
-    <div class="card rv"><span class="n">3</span><div class="col" style="gap:8px"><b style="font-size:34px;letter-spacing:-.015em">See when each one ends</b><span class="b27 mut">An end time on every option</span></div></div>
+    <div class="card rv"><span class="n">2</span><div class="col" style="gap:8px"><b style="font-size:34px;letter-spacing:-.015em">Get up to 6 options</b><span class="b27 mut">Films and episode runs, picked for you</span></div></div>
+    <div class="card rv"><span class="n">3</span><div class="col" style="gap:8px"><b style="font-size:34px;letter-spacing:-.015em">See when each ends</b><span class="b27 mut">An end time on every option</span></div></div>
   </div>
   <div class="rule rv">
     <p class="rq">We never choose for the member.</p>
-    <p class="b27 mut">In 2021 Netflix added a shuffle button, Play Something, and removed it after low use: people arrive with something in mind. <b class="wh">So the member sets the limit, and the member picks.</b></p>
+    <p class="b27 mut">Netflix removed its shuffle button, Play Something, after low use. <b class="wh">So the member sets the limit, and the member picks.</b></p>
   </div>
 </section>
 
-<!-- 7 · TWO EVENINGS -->
+<!-- 6 · TWO EVENINGS -->
 <section class="slide" data-sec="1" data-title="Two evenings" style="gap:26px">
-  <h2 class="title rv">Two evenings we designed for</h2>
+  <h2 class="title rv">Two evenings</h2>
+  <p class="lead rv">A normal evening, <b>and a short one.</b></p>
   <div class="card eve rv"><span class="acc blue draw"></span>
     <div class="who2">
       <p class="nm"><span class="av" style="background:var(--blue)">M</span>Maya</p>
-      <p class="b24 mut">Tuesday, 21:00. Two hours before bed, watching together on TV.</p>
-      <p class="outcome"><span class="c-green">✓</span>Playing in about a minute. Finished on time.</p>
+      <p class="b24 mut">Tuesday, 21:00. Two hours before bed.</p>
+      <p class="outcome"><span class="c-green">✓</span>Playing within a minute. Done by 22:55.</p>
     </div>
     <div class="etl">
       <div class="ax"></div>
-      <div class="pin2" style="left:0"><span class="t">21:00</span><span class="xt">Opens Netflix, picks 2 hours</span></div>
+      <div class="pin2" style="left:0"><span class="t">21:00</span><span class="xt">Picks 2 hours</span></div>
       <div class="blk fill-blue draw" style="left:0.8%;width:95%;--i:3">The Quiet Line · episodes 4 to 6 · 1 hr 54 min</div>
       <div class="pin2 rt" style="left:95.8%;transform:translateX(calc(-100% + 12px));align-items:flex-end;text-align:right"><span class="t c-red">22:55</span><span class="xt">Last episode ends</span></div>
       <div class="lim" style="left:100%;top:88px;bottom:44px"></div>
@@ -772,8 +702,8 @@ kbd{font:600 16px/1 var(--sans);color:var(--muted);border:1px solid #3A3E4E;bord
   <div class="card eve rv"><span class="acc amber draw"></span>
     <div class="who2">
       <p class="nm"><span class="av" style="background:var(--amber)">O</span>Omer</p>
-      <p class="b24 mut">22:20. Forty minutes before sleep. His drama's next episode runs 55.</p>
-      <p class="outcome"><span class="c-green">✓</span>Nothing fits exactly. He sees the three closest options and picks one that ends on time.</p>
+      <p class="b24 mut">22:20. Forty minutes. His next episode is 55.</p>
+      <p class="outcome"><span class="c-green">✓</span>Nothing fits exactly. He picks a 25-minute episode instead.</p>
     </div>
     <div class="etl">
       <div class="pin2" style="left:0;top:0"><span class="t">22:20</span><span class="xt">40 minutes</span></div>
@@ -785,50 +715,73 @@ kbd{font:600 16px/1 var(--sans);color:var(--muted);border:1px solid #3A3E4E;bord
   </div>
 </section>
 
-<!-- 8 · SCOPE -->
-<section class="slide" data-sec="2" data-title="What launches first" style="gap:28px">
-  <h2 class="title rv">What launches first</h2>
-  <div class="row" style="gap:26px;align-items:stretch">
-    <div class="card grow col rv" style="padding:30px 36px"><span class="acc green draw"></span>
-      <p class="lab c-green" style="margin-bottom:14px">In the first release</p>
-      <div class="lst">
-        <div class="li sl rv"><svg class="chk" viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg>TV app · US and Canada · ad-free plans · not on Kids profiles</div>
-        <div class="li sl rv"><svg class="chk" viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg>Pick a time: presets, custom, or the last one used</div>
-        <div class="li sl rv"><svg class="chk" viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg>Personal picks: films and runs of episodes</div>
-        <div class="li sl rv"><svg class="chk" viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg>An end time on every option</div>
-        <div class="li sl rv"><svg class="chk" viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg>Autoplay stops when the plan ends</div>
-        <div class="li sl rv"><svg class="chk" viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg>A clear answer when nothing fits</div>
-        <div class="li sl rv"><svg class="chk" viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg>Tracking and the A/B test setup</div>
-      </div>
+<!-- 7 · REQUIREMENTS (MoSCoW) -->
+<section class="slide" data-sec="2" data-title="Requirements">
+  <h2 class="title rv">Requirements</h2>
+  <p class="lead rv">19 requirements, <b>prioritized with MoSCoW.</b></p>
+  <div class="mosc" id="mosc">
+    <div class="mtabs">
+      <button class="mtab m on rv" data-b="must"><span class="ml">M</span><span class="mt"><b>Must</b><small>Needed to launch</small></span><span class="mc">13</span></button>
+      <button class="mtab s rv" data-b="should"><span class="ml">S</span><span class="mt"><b>Should</b><small>Planned, can slip</small></span><span class="mc">6</span></button>
+      <button class="mtab w rv" data-b="wont"><span class="ml">W</span><span class="mt"><b>Won't</b><small>Not in this launch</small></span><span class="mc">8</span></button>
     </div>
-    <div class="card grow col rv" style="padding:30px 36px">
-      <p class="lab" style="margin-bottom:14px">Later</p>
-      <div class="lst out">
-        <div class="li sr rv">Ad-supported plan<span class="chip violet">Phase 3</span></div>
-        <div class="li sr rv">Mobile and web<span class="chip blue">Phase 2</span></div>
-        <div class="li sr rv">Re-plan after pauses<span class="chip blue">Phase 2</span></div>
-        <div class="li sr rv">Picks for two profiles together<span class="chip violet">Phase 3</span></div>
-        <div class="li sr rv">A film and episodes in one evening<span class="chip violet">Phase 3</span></div>
-        <div class="li sr rv">Kids profiles, live events, games<span class="chip plain">Out of scope</span></div>
-        <div class="li sr rv">Picks by age group<span class="chip plain">Not planned</span></div>
-      </div>
+    <div class="card mpanel rv">
+      <ul class="mlist on two-c" data-b="must">
+        <li>Evening banner on Home, 18:00 to 02:00</li>
+        <li>Hidden on the ads plan and Kids profiles</li>
+        <li>Six time presets, 2 hours by default</li>
+        <li>Custom time, 20 minutes to 4 hours</li>
+        <li>Up to 6 options that end in time</li>
+        <li>Runtime counted to the end credits</li>
+        <li>Series start where you stopped</li>
+        <li>Ranked by taste, relevant titles only</li>
+        <li>Nothing blocked, disliked or unlicensed</li>
+        <li>End time on every option, rounded up</li>
+        <li>Play starts right away</li>
+        <li>Autoplay stops when the plan ends</li>
+        <li>"No exact match" shows the 3 closest options</li>
+      </ul>
+      <ul class="mlist" data-b="should">
+        <li>"2-Hour Night" in the TV menu</li>
+        <li>The last time picked is remembered</li>
+        <li>Change the time from the results</li>
+        <li>The planned end time shows in the player</li>
+        <li>Change the starting episode</li>
+        <li>Offer one more episode when it runs 6 to 20 min over</li>
+      </ul>
+      <ul class="mlist two-c wont" data-b="wont">
+        <li>The ads plan<span class="chip violet">Phase 3</span></li>
+        <li>A film and episodes in one evening<span class="chip violet">Phase 3</span></li>
+        <li>Watching together<span class="chip violet">Phase 3</span></li>
+        <li>Mobile and web apps<span class="chip blue">Phase 2</span></li>
+        <li>Live end-time updates after pauses<span class="chip blue">Phase 2</span></li>
+        <li>Kids profiles<span class="chip plain">Not planned</span></li>
+        <li>Live events and games<span class="chip plain">Not planned</span></li>
+        <li>Picks by age group<span class="chip plain">Not planned</span></li>
+      </ul>
     </div>
-  </div>
-  <div class="trade rv">
-    <p class="b24 grow"><b class="c-amber">The hardest cut: the ads plan.</b> <span class="mut">Ad breaks make the end time unpredictable, and the end time is the whole promise.</span></p>
-    <button class="more" data-open="sh-size">Why this size<svg viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg></button>
   </div>
 </section>
-<!-- 9 · RICE -->
-<section class="slide" data-sec="2" data-title="How we chose what goes in" style="gap:26px">
-  <h2 class="title rv">How we chose what goes in</h2>
-  <div class="formula rv">
-    <div class="fx"><b>Reach</b><span>people per quarter</span></div><span class="op">×</span>
-    <div class="fx"><b>Impact</b><span>from 0.25 to 3</span></div><span class="op">×</span>
-    <div class="fx"><b>Confidence</b><span>how sure we are</span></div><span class="op">÷</span>
-    <div class="fx"><b>Effort</b><span>months of work</span></div><span class="op">=</span>
-    <div class="fx" style="border-color:rgba(94,139,255,.5);background:var(--blue-s)"><b>RICE score</b><span>higher goes first</span></div>
+
+<!-- 8 · QUALITY AND PRICE -->
+<section class="slide" data-sec="2" data-title="Quality and price" style="gap:34px">
+  <h2 class="title rv">Quality and price</h2>
+  <p class="lead rv">Four quality targets, <b>and no change to the price.</b></p>
+  <div class="kpis">
+    <div class="card kpi rv"><span class="acc blue draw"></span><p class="n c-blue"><span data-count="2">2</span><small>sec</small></p><div class="viz"><div class="load"><i></i></div></div><p>Options on screen, 19 times out of 20</p></div>
+    <div class="card kpi rv"><span class="acc violet draw"></span><p class="n"><span data-count="3">3</span><small>clicks</small></p><div class="viz clk"><i></i><i></i><i></i></div><p>From Home to playing</p></div>
+    <div class="card kpi rv"><span class="acc red draw"></span><p class="n c-red">±5<small>min</small></p><div class="viz"><div class="rng"><i></i><b></b></div></div><p>End time accuracy, 19 times out of 20</p></div>
+    <div class="card kpi rv"><span class="acc green draw"></span><p class="n c-green">0</p><div class="viz"><span class="ring0"></span></div><p>New personal data collected</p></div>
   </div>
+  <div class="col">
+    <p class="line2 rv"><b>If it's slow</b><span class="mut">After 3 seconds, a simple list by length and popularity. Never a blank screen.</span></p>
+    <p class="line2 rv"><b>Price</b><span class="mut">No change. Included in every ad-free plan.</span></p>
+  </div>
+</section>
+<!-- 9 · WHAT LAUNCHES FIRST (RICE) -->
+<section class="slide" data-sec="3" data-title="What launches first" style="gap:30px">
+  <h2 class="title rv">What launches first</h2>
+  <p class="lead rv"><b>The TV app, in the US and Canada, on ad-free plans.</b> Ten ideas, ranked by RICE.</p>
   <div class="row" style="gap:26px;align-items:flex-start">
     <table class="rice grow rv" id="rice">
       <thead><tr><th style="width:35%">Idea</th><th>Reach</th><th>Impact</th><th>Conf.</th><th>Effort</th><th>Score</th><th style="padding-left:30px">Decision</th></tr></thead>
@@ -847,24 +800,26 @@ kbd{font:600 16px/1 var(--sans);color:var(--muted);border:1px solid #3A3E4E;bord
       </tbody>
     </table>
     <div class="card calc rv" style="width:470px;flex:none" id="calc">
-      <span class="acc blue"></span>
+      <span class="acc blue draw"></span>
       <p class="lab">The math · click any row</p>
+      <p class="fxl">Reach × Impact × Confidence ÷ Effort</p>
       <p class="b27 wh" style="font-weight:700" id="cN">End time on each option</p>
       <p class="eq" id="cE">4.7M <span class="op2">×</span> 1 <span class="op2">×</span> 80% <span class="op2">÷</span> 0.5</p>
       <p class="res c-green" id="cS">7.52</p>
-      <p class="b22 mut" id="cD">High reach, low effort. The cheapest way to deliver the core promise.</p>
-      <button class="more" data-open="sh-reach" style="align-self:flex-start;margin-top:6px">How we estimated reach<svg viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg></button>
+      <p class="b22 mut" id="cD"><b class="wh">In the first release.</b> High reach, very low effort. The cheapest way to deliver the core promise.</p>
+      <p class="b20 dim" style="margin-top:auto">Reach = members expected to try it in a quarter</p>
     </div>
   </div>
 </section>
 
 <!-- 10 · ROADMAP -->
-<section class="slide" data-sec="2" data-title="Three phases">
-  <h2 class="title rv">Three phases, each with a gate</h2>
+<section class="slide" data-sec="3" data-title="Roadmap">
+  <h2 class="title rv">Roadmap</h2>
+  <p class="lead rv">Three phases. <b>Each one starts only when the previous gate is passed.</b></p>
   <div class="road">
     <div class="col rv"><div class="card phase grow"><span class="acc red draw"></span>
         <p class="lab c-red">Phase 1</p><p class="pn">Launch</p>
-        <ul class="wh"><li style="color:#E6E8F0">TV app · US and Canada · ad-free plans</li><li style="color:#E6E8F0">Films and episode runs, with end times</li><li style="color:#E6E8F0">The "nothing fits" screen</li><li style="color:#E6E8F0">A 4-week A/B test</li></ul></div>
+        <ul><li style="color:#E6E8F0">TV app · US and Canada · ad-free plans</li><li style="color:#E6E8F0">Films and episode runs, with end times</li><li style="color:#E6E8F0">The "nothing fits" screen</li><li style="color:#E6E8F0">A 4-week A/B test</li></ul></div>
       <div class="gate c-red"><span class="dia"></span><span class="mut">Gate: the goals are met and the guardrails hold</span></div></div>
     <div class="conn rv"><svg viewBox="0 0 60 30"><path class="ln" d="M2 15h50"/><path d="M46 6l10 9-10 9"/></svg></div>
     <div class="col rv"><div class="card phase grow"><span class="acc blue draw"></span>
@@ -875,64 +830,29 @@ kbd{font:600 16px/1 var(--sans);color:var(--muted);border:1px solid #3A3E4E;bord
     <div class="col rv"><div class="card phase grow"><span class="acc violet draw"></span>
         <p class="lab c-violet">Phase 3</p><p class="pn">Next</p>
         <ul><li>The ads plan, with end times that include ad breaks</li><li>A film and episodes in one evening</li><li>Watching together</li></ul></div>
-      <div class="gate c-violet"><span class="dia"></span><span class="mut">Gate to start: we can predict ad breaks well enough to keep the 5-minute accuracy</span></div></div>
+      <div class="gate c-violet"><span class="dia"></span><span class="mut">Gate to start: ad breaks can be predicted within the 5-minute accuracy</span></div></div>
   </div>
 </section>
 
 <!-- 11 · RISKS -->
-<section class="slide" data-sec="2" data-title="What could go wrong" style="gap:30px">
-  <h2 class="title rv">What could go wrong</h2>
+<section class="slide" data-sec="3" data-title="Risks" style="gap:30px">
+  <h2 class="title rv">Risks</h2>
+  <p class="lead rv">What could go wrong, <b>and what we do about it.</b></p>
   <div class="col">
-    <div class="risk sl rv"><span><span class="chip amber">Product</span></span><p class="r">People don't use it, like Play Something</p><p class="m">The banner shows up at the moment of choice. <span class="kill">Kill criterion: if under 10% use it again after the test, we pause.</span></p></div>
-    <div class="risk sl rv"><span><span class="chip blue">Tech</span></span><p class="r">End times are wrong</p><p class="m">End-credits markers, rounding up to 5 minutes, and no titles without reliable runtime data.</p></div>
-    <div class="risk sl rv"><span><span class="chip violet">UX</span></span><p class="r">Weak options in short windows</p><p class="m">Only titles that pass a relevance bar, and a clear "nothing fits" screen instead of filler.</p></div>
-    <div class="risk sl rv"><span><span class="chip red">Business</span></span><p class="r">People watch less overall</p><p class="m">Guardrails on evening viewing and retention. "Keep watching" is always one click away.</p></div>
-    <div class="risk sl rv"><span><span class="chip green">Rollout</span></span><p class="r">Launch problems across teams</p><p class="m">Employees first, then 1%, 10%, and the 50/50 test. A feature flag with instant rollback.</p></div>
-  </div>
-  <p class="b22 dim rv" style="margin-top:auto">We depend on: Personalization · Content metadata · TV app · Playback · Data science · Legal and privacy</p>
-</section>
-
-<!-- 12 · REQUIREMENTS -->
-<section class="slide" data-sec="3" data-title="What it has to do" style="gap:30px">
-  <h2 class="title rv">What it has to do</h2>
-  <p class="lead rv">19 requirements in five groups: <b>17 from the PRD, and 2 we added after sketching the screens.</b></p>
-  <div class="req">
-    <div class="card rq rv"><span class="acc blue draw"></span><div class="top"><b>Getting in</b><span class="cnt">3</span></div><p>An evening banner from 18:00 to 02:00, plus a menu entry. Hidden on the ads plan and on Kids profiles.</p></div>
-    <div class="card rq rv"><span class="acc blue draw"></span><div class="top"><b>Choosing the time</b><span class="cnt">3</span></div><p>Six presets, a custom time from 20 minutes to 4 hours, and the last choice remembered.</p></div>
-    <div class="card rq rv"><span class="acc blue draw"></span><div class="top"><b>Building the options</b><span class="cnt">5</span></div><p>Up to six options, films or episode runs, all ending inside the time. Series start where you stopped.</p></div>
-    <div class="card rq rv"><span class="acc blue draw"></span><div class="top"><b>Showing and playing</b><span class="cnt">7 · <span class="c-violet">2 new</span></span></div><p>An end time on every option. Autoplay stops when the plan ends. A run can be adjusted: start episode, one more episode.</p></div>
-    <div class="card rq rv"><span class="acc amber draw"></span><div class="top"><b>When nothing fits</b><span class="cnt">1</span></div><p>The three closest options, each with its overrun in minutes, never more than 20.</p></div>
-    <button class="card rq mosc rv" data-open="sh-reqs">
-      <div class="top"><b>MoSCoW priority</b><svg viewBox="0 0 24 24" style="width:26px;height:26px;stroke:#fff;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"><path d="M7 17L17 7M9 7h8v8"/></svg></div>
-      <p class="mm"><span class="c-blue">13</span> Must · 6 Should</p>
-      <div class="mbar"><i class="draw" style="width:68.4%;background:var(--blue)"></i><i style="width:31.6%;background:#4A4F60"></i></div>
-      <p style="font-size:20px">Click to see all 19 requirements</p>
-    </button>
+    <div class="risk sl rv"><span><span class="chip amber">Product</span></span><p class="r">People don't use it, like Play Something</p><p class="m">The banner appears at the moment of choice. <span class="kill">If under 10% use it again after the test, we pause.</span></p></div>
+    <div class="risk sl rv"><span><span class="chip blue">Tech</span></span><p class="r">End times are wrong</p><p class="m">Count to the end credits, round up, and skip titles without reliable runtime data.</p></div>
+    <div class="risk sl rv"><span><span class="chip violet">UX</span></span><p class="r">Weak options in short windows</p><p class="m">Relevant titles only, and a clear "nothing fits" screen instead of filler.</p></div>
+    <div class="risk sl rv"><span><span class="chip red">Business</span></span><p class="r">People watch less overall</p><p class="m">Guardrails on evening viewing and retention. "Keep watching" is one click away.</p></div>
+    <div class="risk sl rv"><span><span class="chip green">Rollout</span></span><p class="r">Launch problems across teams</p><p class="m">Employees first, then 1%, 10% and the 50/50 test, with instant rollback.</p></div>
   </div>
 </section>
 
-<!-- 13 · PROMISES -->
-<section class="slide" data-sec="3" data-title="The promises behind it" style="gap:32px">
-  <h2 class="title rv">The promises behind it</h2>
-  <div class="kpis">
-    <div class="card kpi rv"><span class="acc blue draw"></span><p class="n c-blue"><span data-count="2">2</span><small>sec</small></p><div class="viz"><div class="load"><i></i></div></div><p>Options on screen within 2 seconds, for 95% of requests</p></div>
-    <div class="card kpi rv"><span class="acc violet draw"></span><p class="n"><span data-count="3">3</span><small>clicks</small></p><div class="viz clk"><i></i><i></i><i></i></div><p>Remote clicks from Home to playing</p></div>
-    <div class="card kpi rv"><span class="acc red draw"></span><p class="n c-red">±5<small>min</small></p><div class="viz"><div class="rng"><i></i><b></b></div></div><p>End time accuracy, 19 times out of 20</p></div>
-    <div class="card kpi rv"><span class="acc green draw"></span><p class="n c-green">0</p><div class="viz"><span class="ring0"></span></div><p>New personal data collected</p></div>
-  </div>
-  <div class="col">
-    <p class="line2 rv"><b>If it's slow</b><span class="mut">Personalization gets 3 seconds. After that, a simple list by length and popularity. Never a blank screen.</span></p>
-    <p class="line2 rv"><b>Pricing</b><span class="mut">No price change. Included in every ad-free plan. Not marketed against the ads plan.</span></p>
-  </div>
-  <div class="rv"><button class="more" data-open="sh-quality">All quality requirements and pricing decisions<svg viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg></button></div>
-</section>
-
-<!-- 14 · FLOW -->
+<!-- 12 · THE FLOW -->
 <section class="slide" data-sec="4" data-title="The flow">
   <h2 class="title rv">The flow</h2>
   <div class="fmap">
     <span class="runner"></span>
-    <p class="lab rv" style="position:absolute;left:0;top:34px">Main flow</p>
+    <p class="lab rv" style="position:absolute;left:0;top:34px">Maya's evening · 21:00 to 22:55</p>
     <div class="fbox rv" style="left:0;top:90px"><span class="k">Screen 1</span><span class="t">Home</span><span class="s">the evening banner</span></div>
     <div class="farr draw" style="left:332px;top:157px;width:104px;--i:2"></div>
     <div class="fbox rv" style="left:440px;top:90px"><span class="k">Screen 2</span><span class="t">Pick your time</span><span class="s">presets or custom</span></div>
@@ -940,18 +860,16 @@ kbd{font:600 16px/1 var(--sans);color:var(--muted);border:1px solid #3A3E4E;bord
     <div class="fbox rv" style="left:880px;top:90px"><span class="k">Screen 3</span><span class="t">What fits tonight</span><span class="s">an end time on each</span></div>
     <div class="farr draw" style="left:1212px;top:157px;width:118px;--i:6"></div>
     <p class="rv" style="position:absolute;left:1236px;top:118px;font:600 18px/1 var(--sans);color:var(--muted)">Play</p>
-    <div class="fbox rv" style="left:1334px;top:90px"><span class="k">Screen 6</span><span class="t">End of the plan</span><span class="s">autoplay stops</span></div>
+    <div class="fbox rv" style="left:1334px;top:90px"><span class="k">Screen 5</span><span class="t">The evening ends</span><span class="s">autoplay stops</span></div>
     <div class="fv rv" style="left:1000px;top:230px;height:140px;border-color:var(--violet);color:var(--violet)"></div>
     <div class="fv up rv" style="left:1090px;top:232px;height:140px;border-color:var(--violet);color:var(--violet)"></div>
-    <p class="rv" style="position:absolute;left:1112px;top:282px;font:600 19px/1.3 var(--sans);color:#C4B2FF;width:220px">optional: adjust a run</p>
-    <div class="fbox new rv" style="left:880px;top:380px"><span class="k" style="color:#C4B2FF">Screen 4 · new</span><span class="t">Fine-tune the plan</span><span class="s">start episode, one more</span></div>
+    <p class="rv" style="position:absolute;left:1112px;top:282px;font:600 19px/1.3 var(--sans);color:#C4B2FF;width:220px">optional</p>
+    <div class="fbox new rv" style="left:880px;top:380px"><span class="k" style="color:#C4B2FF">Screen 4</span><span class="t">Fine-tune the plan</span><span class="s">start episode, one more</span></div>
     <div class="fv rv" style="left:605px;top:230px;height:140px;border-color:var(--amber);color:var(--amber)"></div>
     <p class="rv" style="position:absolute;left:626px;top:282px;font:600 19px/1.3 var(--sans);color:var(--amber);width:220px">too little time</p>
-    <div class="fbox edge rv" style="left:440px;top:380px"><span class="k" style="color:var(--amber)">Screen 5 · edge case</span><span class="t">When nothing fits</span><span class="s">the 3 closest options</span></div>
-    <p class="b22 mut rv" style="position:absolute;left:0;top:560px;width:1664px">Grayscale on purpose: these screens decide layout and behavior, not the visual design. Left out on purpose: ads, joint picks, ratings and comments.</p>
-  </div>
+    <div class="fbox edge rv" style="left:440px;top:380px"><span class="k" style="color:var(--amber)">Screen 6 · edge case</span><span class="t">When nothing fits</span><span class="s">Omer, 22:20</span></div>  </div>
 </section>
-<!-- 15 · SCREEN 1 -->
+<!-- 13 · SCREEN 1 -->
 <section class="slide" data-sec="4" data-title="Screen 1 · Home">
   <h2 class="title rv">Home, 21:00</h2>
   <div class="wfrow">
@@ -979,15 +897,15 @@ kbd{font:600 16px/1 var(--sans);color:var(--muted);border:1px solid #3A3E4E;bord
     </div></div>
     <div class="side">
       <p class="moment rv"><span class="time">21:00</span>Maya opens Netflix</p>
-      <div class="an rv" data-p="1"><span class="c">1</span><p>An evening banner, 18:00 to 02:00<small>Right where people decide what to watch</small></p></div>
-      <div class="an rv" data-p="2"><span class="c">2</span><p>One action: Start<small>No settings and no extra choices</small></p></div>
+      <div class="an rv" data-p="1"><span class="c">1</span><p>Evening banner, 18:00 to 02:00<small>Where people decide what to watch</small></p></div>
+      <div class="an rv" data-p="2"><span class="c">2</span><p>One action: Start<small>No settings, no extra choices</small></p></div>
       <div class="an rv" data-p="3"><span class="c">3</span><p>Always in the menu<small>For eligible profiles, day or night</small></p></div>
-      <p class="insight rv">Nothing else on Home changes, <b>so the page stays as fast as it is today.</b></p>
+      <p class="insight rv">Nothing else on Home changes, <b>so it stays as fast as today.</b></p>
     </div>
   </div>
 </section>
 
-<!-- 16 · SCREEN 2 -->
+<!-- 14 · SCREEN 2 -->
 <section class="slide" data-sec="4" data-title="Screen 2 · Pick your time">
   <h2 class="title rv">Pick your time</h2>
   <div class="wfrow">
@@ -1014,15 +932,15 @@ kbd{font:600 16px/1 var(--sans);color:var(--muted);border:1px solid #3A3E4E;bord
     </div></div>
     <div class="side">
       <p class="moment rv"><span class="time">21:00</span>2 hours is already selected</p>
-      <div class="an rv" data-p="1"><span class="c">1</span><p>One question on the screen<small>Nothing else to read or decide</small></p></div>
-      <div class="an rv" data-p="2"><span class="c">2</span><p>Six presets, 2 hours by default<small>The end time updates as you choose</small></p></div>
-      <div class="an rv" data-p="3"><span class="c">3</span><p>Custom time, 20 min to 4 hours<small>In 10-minute steps. The last choice is remembered.</small></p></div>
-      <p class="insight rv">Returning members just confirm. <b>This is the second of three clicks to playing.</b></p>
+      <div class="an rv" data-p="1"><span class="c">1</span><p>One question<small>Nothing else to decide</small></p></div>
+      <div class="an rv" data-p="2"><span class="c">2</span><p>Six presets<small>The end time updates as you choose</small></p></div>
+      <div class="an rv" data-p="3"><span class="c">3</span><p>Or a custom time<small>20 min to 4 hours. The last choice is remembered.</small></p></div>
+      <p class="insight rv">Returning members just confirm. <b>The second of three clicks to playing.</b></p>
     </div>
   </div>
 </section>
 
-<!-- 17 · SCREEN 3 -->
+<!-- 15 · SCREEN 3 -->
 <section class="slide" data-sec="4" data-title="Screen 3 · What fits tonight">
   <h2 class="title rv">What fits tonight</h2>
   <div class="wfrow">
@@ -1054,16 +972,16 @@ kbd{font:600 16px/1 var(--sans);color:var(--muted);border:1px solid #3A3E4E;bord
       </div>
     </div></div>
     <div class="side">
-      <p class="moment rv"><span class="time">21:00</span>2 hours, six options</p>
-      <div class="an rv" data-p="1"><span class="c">1</span><p>What you're in the middle of comes first<small>Each run starts where you stopped</small></p></div>
-      <div class="an rv" data-p="2"><span class="c">2</span><p>Then new titles that fit tonight<small>Filter by genre in one click</small></p></div>
-      <div class="an rv" data-p="3"><span class="c">3</span><p>What it is, how long, when it ends<small>1 hr 54 min from 21:00 shows as 22:55: we round up, so we never promise an early finish</small></p></div>
-      <p class="insight rv">Still six options, like the PRD: <b>two to continue, four new.</b></p>
+      <p class="moment rv"><span class="time">21:00</span>Six options, all end by 23:00</p>
+      <div class="an rv" data-p="1"><span class="c">1</span><p>What you're watching comes first<small>Each run starts where you stopped</small></p></div>
+      <div class="an rv" data-p="2"><span class="c">2</span><p>Then new titles that fit<small>Filter by genre in one click</small></p></div>
+      <div class="an rv" data-p="3"><span class="c">3</span><p>When each one ends<small>Rounded up: 22:54 shows as 22:55</small></p></div>
+      <p class="insight rv">Six options: <b>two to continue, four new.</b></p>
     </div>
   </div>
 </section>
 
-<!-- 18 · SCREEN 4 -->
+<!-- 16 · SCREEN 4 -->
 <section class="slide" data-sec="4" data-title="Screen 4 · Fine-tune the plan">
   <h2 class="title rv">Fine-tune the plan</h2>
   <div class="wfrow">
@@ -1089,22 +1007,53 @@ kbd{font:600 16px/1 var(--sans);color:var(--muted);border:1px solid #3A3E4E;bord
       </div>
     </div></div>
     <div class="side" style="gap:22px">
-      <p class="moment rv" style="color:#D6CAFF;background:var(--violet-s);border-color:rgba(167,139,250,.45)">New screen, added after sketching</p>
-      <div class="an rv" data-p="1"><span class="c">1</span><p>Start from any episode<small>Default is where you stopped. Pick an earlier one to watch it again.</small></p></div>
-      <div class="an rv" data-p="2"><span class="c">2</span><p>One more episode? See the overrun first<small>The member decides, and the plan updates</small></p></div>
+      <p class="moment rv" style="color:#D6CAFF;background:var(--violet-s);border-color:rgba(167,139,250,.45)">Optional</p>
+      <div class="an rv" data-p="1"><span class="c">1</span><p>Start from any episode<small>Pick an earlier one to watch it again</small></p></div>
+      <div class="an rv" data-p="2"><span class="c">2</span><p>One more episode?<small>See the overrun first, then decide</small></p></div>
       <div class="an rv" data-p="3"><span class="c">3</span><p>One clear rule</p></div>
       <div class="bands rv" style="margin-top:-8px;padding-left:58px">
         <p class="band"><i style="background:var(--green)"></i>Up to 5 min over counts as a fit</p>
         <p class="band"><i style="background:var(--amber)"></i>6 to 20 min over: offered, minutes shown</p>
         <p class="band"><i style="background:#5A6072"></i>More than 20 min over: never offered</p>
       </div>
-      <p class="insight rv">Using the 30 free minutes for something short is a film-and-episode mix, <b>planned for Phase 3.</b></p>
+      <p class="insight rv">Filling the free 30 minutes with a short film <b>comes in Phase 3.</b></p>
     </div>
   </div>
 </section>
 
-<!-- 19 · SCREEN 5 -->
-<section class="slide" data-sec="4" data-title="Screen 5 · When nothing fits">
+<!-- 17 · SCREEN 5 -->
+<section class="slide" data-sec="4" data-title="Screen 5 · The evening ends on time">
+  <h2 class="title rv">The evening ends on time</h2>
+  <div class="wfrow">
+    <div class="tv rv"><div class="scr" style="background:#F4F4F6">
+      <div class="ph" style="flex:1;border:0;position:relative;display:flex;align-items:center;justify-content:center">
+        <div style="position:relative;background:#fff;border:1.5px solid #9A9AA2;border-radius:8px;width:560px;padding:28px 32px;display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center">
+          <span class="wh2" style="font-size:26px">Your planned watch is complete</span>
+          <span class="wm" style="font-size:14px">The Quiet Line · episodes 4 to 6 · 1 hr 54 min</span>
+          <span class="wm" style="font-size:14px">Finished at 22:55, as planned.</span>
+          <div style="display:flex;gap:14px;margin-top:12px"><span class="wb d" style="width:210px">Back to home</span><span class="wb o" style="width:230px;position:relative">Keep watching anyway<span class="pin pop" data-p="2" style="right:-26px;top:-26px">2</span></span></div>
+          <span class="wm" style="font-size:13px;margin-top:10px">Autoplay stopped here. Nothing starts on its own.</span>
+          <span class="pin pop" data-p="1" style="left:-22px;top:-22px">1</span>
+        </div>
+      </div>
+      <div style="border-top:1.5px solid #CFCFD4;padding:16px 26px 18px;display:flex;flex-direction:column;gap:14px;background:#fff">
+        <div style="height:6px;background:#46464C;border-radius:3px;position:relative"><span style="position:absolute;right:-7px;top:-5px;width:16px;height:16px;border-radius:50%;background:#46464C"></span></div>
+        <div style="display:flex;align-items:center;gap:22px;font-size:14px"><span class="wh2" style="font-size:18px;letter-spacing:4px">▶ ⏮ ⏭</span><span class="wm time">Episode 6 · 38:00 / 38:00</span>
+          <span class="wchip" style="margin-left:auto;position:relative;font-size:14px;padding:6px 14px">Planned watch ends at 22:55<span class="pin pop" data-p="3" style="right:-16px;top:-52px">3</span></span></div>
+      </div>
+    </div></div>
+    <div class="side">
+      <p class="moment rv"><span class="time">22:55</span>Maya's plan is complete</p>
+      <div class="an rv" data-p="1"><span class="c">1</span><p>Autoplay stops at the plan's end<small>Nothing starts on its own</small></p></div>
+      <div class="an rv" data-p="2"><span class="c">2</span><p>Continuing is a choice<small>One click away, never automatic</small></p></div>
+      <div class="an rv" data-p="3"><span class="c">3</span><p>The end time stays in the player<small>Whenever the controls are open</small></p></div>
+      <p class="insight rv"><b>This is where we measure completion.</b></p>
+    </div>
+  </div>
+</section>
+
+<!-- 18 · SCREEN 6 -->
+<section class="slide" data-sec="4" data-title="Screen 6 · When nothing fits">
   <h2 class="title rv">When nothing fits</h2>
   <div class="wfrow">
     <div class="tv rv"><div class="scr">
@@ -1128,63 +1077,30 @@ kbd{font:600 16px/1 var(--sans);color:var(--muted);border:1px solid #3A3E4E;bord
       </div>
     </div></div>
     <div class="side">
-      <p class="moment rv"><span class="time">22:20</span>Omer has 40 minutes</p>
-      <div class="an rv" data-p="1"><span class="c">1</span><p>Says plainly that nothing fits<small>Then does the work anyway</small></p></div>
-      <div class="an rv" data-p="2"><span class="c">2</span><p>The overrun, in minutes<small>Shown only up to 20 minutes, the same rule as screen 4</small></p></div>
-      <div class="an rv" data-p="3"><span class="c">3</span><p>Three reasons to pick<small>Continue what you watch, fits your time, popular now</small></p></div>
-      <p class="insight rv">Someone who knowingly runs 15 minutes over is fine. <b>Someone who finds out at 23:15 is not.</b></p>
+      <p class="moment rv" style="color:#FFE2B8;background:var(--amber-s);border-color:rgba(255,181,71,.45)"><span class="time">22:20</span>Omer has 40 minutes</p>
+      <div class="an rv" data-p="1"><span class="c">1</span><p>Says plainly that nothing fits<small>Then shows the closest options</small></p></div>
+      <div class="an rv" data-p="2"><span class="c">2</span><p>The overrun, in minutes<small>Only up to 20, the same rule as screen 4</small></p></div>
+      <div class="an rv" data-p="3"><span class="c">3</span><p>Three different reasons<small>Continue, fits your time, popular now</small></p></div>
+      <p class="insight rv">Running 15 minutes over by choice is fine. <b>Finding out at 23:15 is not.</b></p>
     </div>
   </div>
 </section>
 
-<!-- 20 · SCREEN 6 -->
-<section class="slide" data-sec="4" data-title="Screen 6 · The evening ends on time">
-  <h2 class="title rv">The evening ends on time</h2>
-  <div class="wfrow">
-    <div class="tv rv"><div class="scr" style="background:#F4F4F6">
-      <div class="ph" style="flex:1;border:0;position:relative;display:flex;align-items:center;justify-content:center">
-        <div style="position:relative;background:#fff;border:1.5px solid #9A9AA2;border-radius:8px;width:560px;padding:28px 32px;display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center">
-          <span class="wh2" style="font-size:26px">Your planned watch is complete</span>
-          <span class="wm" style="font-size:14px">The Quiet Line · episodes 4 to 6 · 1 hr 54 min</span>
-          <span class="wm" style="font-size:14px">Finished at 22:55, as planned.</span>
-          <div style="display:flex;gap:14px;margin-top:12px"><span class="wb d" style="width:210px">Back to home</span><span class="wb o" style="width:230px;position:relative">Keep watching anyway<span class="pin pop" data-p="2" style="right:-26px;top:-26px">2</span></span></div>
-          <span class="wm" style="font-size:13px;margin-top:10px">Autoplay stopped here. Nothing starts on its own.</span>
-          <span class="pin pop" data-p="1" style="left:-22px;top:-22px">1</span>
-        </div>
-      </div>
-      <div style="border-top:1.5px solid #CFCFD4;padding:16px 26px 18px;display:flex;flex-direction:column;gap:14px;background:#fff">
-        <div style="height:6px;background:#46464C;border-radius:3px;position:relative"><span style="position:absolute;right:-7px;top:-5px;width:16px;height:16px;border-radius:50%;background:#46464C"></span></div>
-        <div style="display:flex;align-items:center;gap:22px;font-size:14px"><span class="wh2" style="font-size:18px;letter-spacing:4px">▶ ⏮ ⏭</span><span class="wm time">Episode 6 · 38:00 / 38:00</span>
-          <span class="wchip" style="margin-left:auto;position:relative;font-size:14px;padding:6px 14px">Planned watch ends at 22:55<span class="pin pop" data-p="3" style="right:-16px;top:-52px">3</span></span></div>
-      </div>
-    </div></div>
-    <div class="side">
-      <p class="moment rv"><span class="time">22:55</span>Maya's plan is complete</p>
-      <div class="an rv" data-p="1"><span class="c">1</span><p>Autoplay stops where the evening ends<small>Nothing starts on its own</small></p></div>
-      <div class="an rv" data-p="2"><span class="c">2</span><p>Continuing is a choice, not a default<small>One click away, never automatic</small></p></div>
-      <div class="an rv" data-p="3"><span class="c">3</span><p>The planned end time stays in the player<small>Visible whenever the controls are open</small></p></div>
-      <p class="insight rv">This is where a plan becomes a finished evening, <b>and where we measure completion.</b></p>
-    </div>
-  </div>
-</section>
-
-<!-- 21 · LEARNINGS -->
-<section class="slide" data-sec="5" data-title="What we learned">
+<!-- 19 · WHAT WE LEARNED -->
+<section class="slide" data-grp="Wrap-up" data-title="What we learned">
   <h2 class="title rv">What we learned</h2>
-  <div class="learn">
+  <div class="learn three">
     <div class="card lc rv"><span class="acc amber draw"></span><div class="h c-amber"><svg class="ico"><use href="#i-scale"/></svg><b class="wh">The hardest trade-off</b></div>
       <p>Leaving out the ads plan, even though it brings most new sign-ups. <b>Without predictable ad breaks, we can't promise an end time.</b></p></div>
     <div class="card lc rv"><span class="acc blue draw"></span><div class="h c-blue"><svg class="ico"><use href="#i-target"/></svg><b class="wh">The decision we'd defend first</b></div>
-      <p>Measuring the whole test group, not only the people who use the feature. <b>Otherwise we'd measure who chooses it, not what it does.</b></p></div>
-    <div class="card lc rv"><span class="acc violet draw"></span><div class="h c-violet"><svg class="ico"><use href="#i-edit"/></svg><b class="wh">What sketching changed</b></div>
-      <p>Two questions the PRD didn't answer: watching an episode again, and an episode that almost fits. <b>We added two requirements and one clear rule.</b></p></div>
-    <div class="card lc rv"><span class="acc green draw"></span><div class="h c-green"><svg class="ico"><use href="#i-flask"/></svg><b class="wh">What we'd validate first</b></div>
-      <p>How often people really stop mid-title, the 60% completion baseline, and whether 15% try it within a quarter. <b>Each is an assumption the plan rests on.</b></p></div>
+      <p>Measuring the whole test group, not only people who use the feature. <b>Otherwise we'd measure who chooses it, not what it does.</b></p></div>
+    <div class="card lc rv"><span class="acc green draw"></span><div class="h c-green"><svg class="ico"><use href="#i-flask"/></svg><b class="wh">What we'd check first</b></div>
+      <p>How often people stop mid-title, the 60% completion baseline, and whether 15% try it. <b>The plan rests on these three assumptions.</b></p></div>
   </div>
 </section>
 
-<!-- 22 · CLOSING -->
-<section class="slide hero" data-sec="5" data-title="Thank you" style="gap:30px">
+<!-- 20 · THANK YOU -->
+<section class="slide hero" data-grp="Wrap-up" data-title="Thank you" style="gap:30px">
   <div class="glow hero-pulse"></div>
   <div class="clock rv"><svg viewBox="0 0 210 210"><defs><linearGradient id="arcg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5E8BFF"/><stop offset="1" stop-color="#FF4D57"/></linearGradient></defs><circle class="t0" cx="105" cy="105" r="95"/><circle class="arc" cx="105" cy="105" r="95"/></svg><div class="tt"><b>22:55</b><span>ON TIME</span></div></div>
   <h1 class="split" style="font-size:150px;letter-spacing:-.05em;line-height:1;--step:90ms;--start:700ms">Thank you</h1>
@@ -1192,11 +1108,10 @@ kbd{font:600 16px/1 var(--sans);color:var(--muted);border:1px solid #3A3E4E;bord
   <div class="row rv" style="gap:16px;margin-top:10px;--i:10"><button class="ghost" data-go="0">↺ Replay</button></div>
   <p class="team">Maayan Nakav &amp; Tal Shami</p>
 </section>
-
-<!-- ===== click-open detail sheets ===== -->
-<div class="sheet" id="sh-decisions" role="dialog" aria-modal="true" aria-label="Decisions along the way"><div class="panel">
-  <div class="phd"><div><h3>Decisions along the way</h3><p>What we chose at each fork, why, and the option we turned down.</p></div><button class="x" data-close aria-label="Close"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
-  <div class="pbd"><table class="st tight">
+<!-- A1 · DECISIONS -->
+<section class="slide appx" data-grp="Appendix" data-title="Decisions we made">
+  <div class="apx-h rv"><h2 class="title">Decisions we made</h2><span class="chip plain">Appendix</span></div>
+  <table class="st tight apx rv">
     <thead><tr><th style="width:15%">Decision</th><th style="width:27%">What we chose</th><th>Why</th><th style="width:22%">What we rejected</th></tr></thead>
     <tbody>
       <tr><td>How it works</td><td>The member sets the limit, we offer options</td><td>Play Something failed because it chose for the member</td><td class="mut">A shuffle or auto-play button</td></tr>
@@ -1212,130 +1127,59 @@ kbd{font:600 16px/1 var(--sans);color:var(--muted);border:1px solid #3A3E4E;bord
       <tr><td>Kids profiles</td><td>Not included</td><td>Bedtime planning for children is a separate product problem</td><td class="mut">A child-friendly time window</td></tr>
       <tr><td>Prioritization</td><td>RICE across ten ideas</td><td>Comparable scores, with the assumptions out in the open</td><td class="mut">Judgment alone</td></tr>
       <tr><td>Primary metric</td><td>Whole test group against whole control group</td><td>Comparing only feature users with control rewards self-selection</td><td class="mut">Feature users against control as the headline</td></tr>
-      <tr class="grp"><td colspan="4">Added after sketching the screens</td></tr>
       <tr><td>Rewatching</td><td>The member can change the starting episode</td><td>Members sometimes want to watch the last episode again, and forcing the resume point blocks it</td><td class="mut">Always starting where the member stopped</td></tr>
       <tr><td>An episode that almost fits</td><td>Offer one more episode when it runs 6 to 20 minutes over, with the minutes shown</td><td>The member decides with full information, and up to 5 minutes is within our accuracy anyway</td><td class="mut">Silently dropping or adding it</td></tr>
-    </tbody></table></div>
-</div></div>
+    </tbody>
+  </table>
+</section>
 
-<div class="sheet" id="sh-size" role="dialog" aria-modal="true" aria-label="Why the first release is this size"><div class="panel">
-  <div class="phd"><div><h3>Why the first release is this size</h3><p>Smaller would break the promise. Bigger would delay the test that tells us if the promise works.</p></div><button class="x" data-close aria-label="Close"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
-  <div class="pbd"><div class="two">
-    <div><p class="sh-h c-green">It can't be smaller</p>
-      <p class="sh-li"><b>Without episode runs,</b> the promise breaks for most viewing: series are about 3 of every 4 hours. A films-only version would copy the short-movie row that already exists.</p>
-      <p class="sh-li"><b>Without personalization,</b> it's just a runtime filter. Play Something showed people want relevant options, not any title.</p>
-      <p class="sh-li"><b>Without an end time on every option,</b> the member still does the math, and the feature becomes one more row.</p>
-      <p class="sh-li"><b>Without the "nothing fits" screen,</b> short late-evening windows show empty or weak results, exactly for the people who need it most.</p></div>
-    <div><p class="sh-h c-amber">It shouldn't be bigger</p>
-      <p class="sh-li"><b>The ads plan</b> needs a prediction of ad breaks for each member. A wrong end time breaks the core promise, so it waits for that prediction.</p>
-      <p class="sh-li"><b>Film-and-episode mixes and watching together</b> add real logic and screen complexity before we know that single options solve the problem.</p>
-      <p class="sh-li"><b>Every extra platform or plan</b> delays the A/B test. With a fixed team and a one-quarter target, scope is the thing we control.</p></div>
-  </div></div>
-</div></div>
-
-<div class="sheet" id="sh-reach" role="dialog" aria-modal="true" aria-label="How we estimated reach"><div class="panel">
-  <div class="phd"><div><h3>How we estimated reach</h3><p>Reach is the number of eligible members we expect to use the feature in a quarter. Every step after the first is our assumption, kept on the low side.</p></div><button class="x" data-close aria-label="Close"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
-  <div class="pbd"><div class="two" style="grid-template-columns:1.25fr 1fr">
-    <div class="funnel">
+<!-- A2 · REACH -->
+<section class="slide appx" data-grp="Appendix" data-title="How we estimated reach">
+  <div class="apx-h rv"><h2 class="title">How we estimated reach</h2><span class="chip plain">Appendix</span></div>
+  <p class="lead rv">Reach is the number of eligible members we expect to try the feature in a quarter. <b>Every step after the first is our assumption, kept on the low side.</b></p>
+  <div class="two" style="grid-template-columns:1.25fr 1fr;gap:56px">
+    <div class="funnel rv">
       <div class="fr"><span class="fl">Paid memberships in the US and Canada, end of 2024</span><span class="fv2">89.6M</span><span class="fb"><i style="width:100%"></i></span></div>
       <div class="fr"><span class="fl">× on ad-free plans (50%)</span><span class="fv2">44.8M</span><span class="fb"><i style="width:50%"></i></span></div>
       <div class="fr"><span class="fl">× watching on TV in the evening (70%) = eligible</span><span class="fv2">~31M</span><span class="fb"><i style="width:35%"></i></span></div>
       <div class="fr res"><span class="fl">× try it within a quarter (15%) = <b class="wh">reach</b></span><span class="fv2 c-red">≈ 4.7M</span><span class="fb"><i style="width:5.25%"></i></span></div>
       <p class="b22 mut" style="margin-top:8px">Bars are to scale. Membership has grown since 2024, so the real number is likely higher.</p>
     </div>
-    <div class="col" style="gap:0">
+    <div class="col rv" style="gap:0">
       <p class="sh-li" style="border-top:0"><b>Impact scale.</b> 3 massive · 2 high · 1 medium · 0.5 low · 0.25 minimal.</p>
-      <p class="sh-li"><b>The whole launch scores about 0.59:</b> 4.7M × 2 × 50% ÷ 8 months. Confidence is only 50% because Play Something failed on adoption, even though the problem is well documented.</p>
+      <p class="sh-li"><b>The whole launch scores about 0.59:</b> 4.7M × 2 × 50% ÷ 8 months. Confidence is only 50% because Play Something failed on adoption.</p>
       <p class="sh-li"><b>Effort.</b> 6.5 months of work for the four launch items, 8 once tracking, the A/B setup and testing across TV devices are added.</p>
     </div>
-  </div></div>
-</div></div>
-
-<div class="sheet" id="sh-reqs" role="dialog" aria-modal="true" aria-label="All 19 requirements"><div class="panel">
-  <div class="phd"><div><h3>All 19 requirements</h3>
-      <div class="legend" style="margin-top:14px"><span><span class="pr must">MUST</span>needed to launch</span><span><span class="pr should">SHOULD</span>planned for launch, can slip without breaking the core</span><span><span class="newtag">new</span>or <span class="newtag upd">updated</span> after sketching</span></div></div>
-    <button class="x" data-close aria-label="Close"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
-  <div class="pbd"><div class="two">
-    <table class="st tight"><tbody>
-      <tr class="grp"><td colspan="2" style="padding-top:0">Getting in</td></tr>
-      <tr><td style="font-weight:400;color:#D5D8E3">A "2-Hour Night" entry in the TV menu, for ad-free profiles that are not Kids profiles</td><td style="width:1%"><span class="pr should">SHOULD</span></td></tr>
-      <tr><td style="font-weight:400;color:#D5D8E3">An evening banner on Home, from 18:00 to 02:00 local time</td><td><span class="pr must">MUST</span></td></tr>
-      <tr><td style="font-weight:400;color:#D5D8E3">Every entry point hidden on the ads plan and on Kids profiles</td><td><span class="pr must">MUST</span></td></tr>
-      <tr class="grp"><td colspan="2">Choosing the time</td></tr>
-      <tr><td style="font-weight:400;color:#D5D8E3">Presets of 30 min, 1, 1.5, 2, 2.5 and 3 hours, with 2 hours selected on first use</td><td><span class="pr must">MUST</span></td></tr>
-      <tr><td style="font-weight:400;color:#D5D8E3">A custom time from 20 minutes to 4 hours, in 10-minute steps</td><td><span class="pr must">MUST</span></td></tr>
-      <tr><td style="font-weight:400;color:#D5D8E3">From the second use, the last time picked is selected</td><td><span class="pr should">SHOULD</span></td></tr>
-      <tr class="grp"><td colspan="2">Building the options</td></tr>
-      <tr><td style="font-weight:400;color:#D5D8E3">Up to 6 options, each a film or a run of episodes that ends inside the time. <span class="newtag upd">updated</span> Up to 5 minutes over counts as a fit.</td><td><span class="pr must">MUST</span></td></tr>
-      <tr><td style="font-weight:400;color:#D5D8E3">Runtime counts until the end credits, and adds up across a run</td><td><span class="pr must">MUST</span></td></tr>
-      <tr><td style="font-weight:400;color:#D5D8E3">A series in progress starts where the member stopped. A new series starts at episode 1.</td><td><span class="pr must">MUST</span></td></tr>
-      <tr><td style="font-weight:400;color:#D5D8E3">Ranked by the profile's taste, relevant titles only, with at least one film and one run when both exist</td><td><span class="pr must">MUST</span></td></tr>
-      <tr><td style="font-weight:400;color:#D5D8E3">No titles blocked by maturity settings, rated thumbs-down, or not licensed in the country</td><td><span class="pr must">MUST</span></td></tr>
-    </tbody></table>
-    <table class="st tight"><tbody>
-      <tr class="grp"><td colspan="2" style="padding-top:0">Showing and playing</td></tr>
-      <tr><td style="font-weight:400;color:#D5D8E3">Every option shows its title, type, runtime and end time, rounded up to 5 minutes</td><td style="width:1%"><span class="pr must">MUST</span></td></tr>
-      <tr><td style="font-weight:400;color:#D5D8E3">The time can be changed from the results, without leaving the feature</td><td><span class="pr should">SHOULD</span></td></tr>
-      <tr><td style="font-weight:400;color:#D5D8E3">Play starts right away. A second action opens the title page.</td><td><span class="pr must">MUST</span></td></tr>
-      <tr><td style="font-weight:400;color:#D5D8E3">Autoplay runs inside the plan, stops after its last episode, and shows an end screen</td><td><span class="pr must">MUST</span></td></tr>
-      <tr><td style="font-weight:400;color:#D5D8E3">The player shows the planned end time</td><td><span class="pr should">SHOULD</span></td></tr>
-      <tr><td style="font-weight:400;color:#D5D8E3"><span class="newtag">new</span> The member can change the starting episode of a run, and the end time updates</td><td><span class="pr should">SHOULD</span></td></tr>
-      <tr><td style="font-weight:400;color:#D5D8E3"><span class="newtag">new</span> One more episode is offered when it runs 6 to 20 minutes over, with the minutes shown. The member decides.</td><td><span class="pr should">SHOULD</span></td></tr>
-      <tr class="grp"><td colspan="2">When nothing fits</td></tr>
-      <tr><td style="font-weight:400;color:#D5D8E3">A "No exact match" message with up to 3 options: the next item in progress with its overrun (20 minutes at most), a series with episodes that fit, and a local Top 10 title that fits</td><td><span class="pr must">MUST</span></td></tr>
-    </tbody></table>
-  </div></div>
-</div></div>
-
-<div class="sheet" id="sh-metrics" role="dialog" aria-modal="true" aria-label="How we measure"><div class="panel">
-  <div class="phd"><div><h3>How we measure</h3><p>Three metrics, one test, two guardrails. Baselines marked as assumptions are replaced by Netflix's own numbers before launch.</p></div><button class="x" data-close aria-label="Close"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
-  <div class="pbd">
-    <table class="st">
-      <thead><tr><th style="width:17%">Metric</th><th>Exact definition</th><th style="width:22%">Today</th><th style="width:17%">Goal</th></tr></thead>
-      <tbody>
-        <tr><td>Time to start watching <span class="pr must" style="margin-left:6px">PRIMARY</span></td><td>Median time from choosing a profile to playback, in evening sessions (18:00 to 24:00 local). Every member in the test group against every member in control, whether or not they opened the feature.</td><td>About 12 min, the US industry average (assumption)</td><td>At least 2% lower than control</td></tr>
-        <tr><td>Finish the plan</td><td>Share of sessions started from the feature where the member watched at least 90% of the planned runtime, in the same session</td><td>About 60% for evening sessions started from Home (assumption)</td><td>75%</td></tr>
-        <tr><td>Use it again</td><td>Share of members who used the feature once and used it again within 14 days</td><td>New feature</td><td>30% (assumption)</td></tr>
-      </tbody>
-    </table>
-    <div class="two" style="margin-top:22px;gap:34px">
-      <div><p class="sh-li" style="border-top:0"><b>The test.</b> Ad-free members on the TV app in the US and Canada, split 50/50, for four weeks.</p>
-        <p class="sh-li"><b>Success.</b> The primary goal is met with statistical significance, plus at least one secondary goal.</p>
-        <p class="sh-li"><b>Guardrails.</b> Total evening viewing hours and 28-day retention in the test group must not fall below control.</p></div>
-      <div><p class="sh-li" style="border-top:0"><b>Why 2% and not 25%.</b> Inside sessions that use the feature we expect starts about 25% faster. Most sessions won't use it, so across the whole group the effect is about 2%.</p>
-        <p class="sh-li"><b>Events we track.</b> Feature opened, time selected, options shown, option selected, playback started, planned run completed, left without playing.</p></div>
-    </div>
   </div>
-</div></div>
+</section>
 
-<div class="sheet" id="sh-quality" role="dialog" aria-modal="true" aria-label="Quality requirements and pricing"><div class="panel">
-  <div class="phd"><div><h3>Quality requirements and pricing</h3><p>How the feature has to behave, beyond what it does, and how it is packaged.</p></div><button class="x" data-close aria-label="Close"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
-  <div class="pbd"><div class="two">
-    <div><p class="sh-h c-blue">Quality</p>
-      <p class="sh-li"><b>Speed.</b> Options on screen within 2 seconds for 95% of requests. The banner adds no more than 100 ms to Home.</p>
-      <p class="sh-li"><b>Reliability.</b> If personalization doesn't answer within 3 seconds, a list by length and local popularity appears. Never a blank screen, and a failure here never affects browsing or playback.</p>
-      <p class="sh-li"><b>Accuracy.</b> The end time is right within 5 minutes for at least 95% of options.</p>
-      <p class="sh-li"><b>Ease.</b> At most 3 remote clicks to playing. Existing TV patterns, readable from the couch, full screen-reader support.</p>
-      <p class="sh-li"><b>Privacy.</b> Only data Netflix already uses. No new personal data. The last time picked is saved per profile.</p>
-      <p class="sh-li"><b>Local rules and compatibility.</b> Only licensed titles allowed by maturity settings. A 12- or 24-hour clock by device. Older TV app versions simply don't show the entry.</p></div>
-    <div><p class="sh-h c-green">Pricing</p>
-      <p class="sh-li"><b>Price.</b> No change and no separate charge.</p>
-      <p class="sh-li"><b>Packaging.</b> Included in every ad-free plan in the launch markets. Not on the ads plan at launch.</p>
-      <p class="sh-li"><b>Paid add-on.</b> Rejected. It shrinks reach and adds friction to a feature built to remove it.</p>
-      <p class="sh-li"><b>The ads plan.</b> Not marketed as a reason to leave it: it drove more than 60% of sign-ups in its markets in Q1 2026. The exclusion is technical and temporary.</p>
-      <p class="sh-li"><b>Business value.</b> Indirect. Faster starts and finished evenings support engagement and retention.</p>
-      <p class="sh-li"><b>How members get it.</b> No purchase flow. It appears for eligible profiles through the evening banner.</p></div>
-  </div></div>
-</div></div>
+<!-- A3 · METRICS -->
+<section class="slide appx" data-grp="Appendix" data-title="How we measure">
+  <div class="apx-h rv"><h2 class="title">How we measure</h2><span class="chip plain">Appendix</span></div>
+  <table class="st apx rv">
+    <thead><tr><th style="width:17%">Metric</th><th>Exact definition</th><th style="width:22%">Today</th><th style="width:17%">Goal</th></tr></thead>
+    <tbody>
+      <tr><td>Time to start watching <span class="pr must" style="margin-left:6px">PRIMARY</span></td><td>Median time from choosing a profile to playback, in evening sessions (18:00 to 24:00 local). Every member in the test group against every member in control, whether or not they opened the feature.</td><td>About 12 min, the US industry average (assumption)</td><td>At least 2% lower than control</td></tr>
+      <tr><td>Finish the plan</td><td>Share of sessions started from the feature where the member watched at least 90% of the planned runtime, in the same session</td><td>About 60% for evening sessions started from Home (assumption)</td><td>75%</td></tr>
+      <tr><td>Use it again</td><td>Share of members who used the feature once and used it again within 14 days</td><td>New feature</td><td>30% (assumption)</td></tr>
+    </tbody>
+  </table>
+  <div class="two rv" style="gap:44px">
+    <div><p class="sh-li" style="border-top:0"><b>The test.</b> Ad-free members on the TV app in the US and Canada, split 50/50, for four weeks.</p>
+      <p class="sh-li"><b>Success.</b> The primary goal is met with statistical significance, plus at least one secondary goal.</p>
+      <p class="sh-li"><b>Guardrails.</b> Total evening viewing hours and 28-day retention in the test group must not fall below control.</p></div>
+    <div><p class="sh-li" style="border-top:0"><b>Why 2% and not 25%.</b> Inside sessions that use the feature we expect starts about 25% faster. Most sessions won't use it, so across the whole group the effect is about 2%.</p>
+      <p class="sh-li"><b>Events we track.</b> Feature opened, time selected, options shown, option selected, playback started, planned run completed, left without playing.</p></div>
+  </div>
+</section>
 
-<nav class="gtrk hide" id="gtrk" aria-label="Sections"><span class="ind" id="ind"></span></nav>
+<nav class="gtrk hide" id="gtrk" aria-label="Parts of the talk"><span class="ind" id="ind"></span></nav>
 <p class="keyhint" id="keyhint"><kbd>←</kbd><kbd>→</kbd> or the buttons below</p>
 <div class="hud" id="hud">
   <span class="brand"><b>Netflix</b> · 2-Hour Night Mode</span>
   <div class="scrub" id="scrub"><span class="knob" id="knob"></span></div>
   <span class="tc" id="tc"></span>
   <div class="ctl">
-    <button class="btn" id="bEps" aria-label="All slides (E)" aria-pressed="false" title="All slides (E)"><svg viewBox="0 0 24 24"><rect x="3.5" y="4" width="7" height="7" rx="1.5"/><rect x="13.5" y="4" width="7" height="7" rx="1.5"/><rect x="3.5" y="14" width="7" height="7" rx="1.5"/><rect x="13.5" y="14" width="7" height="7" rx="1.5"/></svg></button>
     <button class="btn" id="bFs" aria-label="Fullscreen (F)" title="Fullscreen (F)"><svg viewBox="0 0 24 24"><path d="M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5"/></svg></button>
     <button class="btn" id="bPrev" aria-label="Previous slide" title="Previous (←)"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
     <button class="btn main" id="bNext" aria-label="Next slide" title="Next (→)"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
@@ -1348,11 +1192,12 @@ kbd{font:600 16px/1 var(--sans);color:var(--muted);border:1px solid #3A3E4E;bord
 (function(){
   const stage=document.getElementById('stage'), vp=document.getElementById('vp');
   const slides=[...stage.querySelectorAll('.slide')];
-  const SECS=['Problem & Goal','Solution','Scope','Requirements','Screens','Learnings'];
-  const BUDGET=[4,3,6,2,8,2];
+  const SECS=['Problem & goal','Solution','Requirements','Scope & risks','Screens'];
+  const BUDGET=[2,1.85,1.85,2.65,4.65];
+  const MAIN=slides.filter(s=>!s.classList.contains('appx')).length;
   const pad=n=>String(n).padStart(2,'0');
   const hhmm=m=>{m=((m%1440)+1440)%1440;return pad(Math.floor(m/60))+':'+pad(m%60)};
-  let cur=0, shown=-1, openSheet=null, opener=null;
+  let cur=0, shown=-1;
 
   function fit(){const s=Math.min(vp.clientWidth/1920,vp.clientHeight/1080);stage.style.transform=`translate(-50%,-50%) scale(${s})`;}
   fit();
@@ -1382,35 +1227,33 @@ kbd{font:600 16px/1 var(--sans);color:var(--muted);border:1px solid #3A3E4E;bord
   document.querySelectorAll('table.rice td.s').forEach(td=>{td.dataset.count=td.textContent.trim();td.dataset.dec=2});
   slides.forEach(s=>[...s.querySelectorAll('.rv,.pop,.draw')].forEach((el,i)=>{if(!el.style.getPropertyValue('--i'))el.style.setProperty('--i',i)}));
 
-  const firstOf=sec=>{const i=slides.findIndex(s=>s.dataset.sec===String(sec)&&!s.classList.contains('hero'));return i<0?0:i};
-
-  /* section tracker */
+  /* where am I: the five parts, same names as the agenda (labels only, not buttons) */
   const gtrk=document.getElementById('gtrk'), ind=document.getElementById('ind');
-  const tbtns=SECS.map((n,i)=>{
+  const tlabs=SECS.map((n,i)=>{
     if(i)gtrk.insertAdjacentHTML('beforeend','<span class="sep">/</span>');
-    const b=document.createElement('button');b.textContent=n;b.onclick=()=>go(firstOf(i));gtrk.appendChild(b);return b;
+    const t=document.createElement('span');t.className='t';t.textContent=n;gtrk.appendChild(t);return t;
   });
 
-  /* scrubber, one segment per part, width follows its time budget */
+  /* progress bar, one segment per part, width follows its time budget (display only) */
   const scrub=document.getElementById('scrub'), knob=document.getElementById('knob');
   const segs=SECS.map((n,i)=>{
     const idxs=slides.map((s,j)=>s.dataset.sec===String(i)?j:-1).filter(j=>j>=0);
-    const seg=document.createElement('div');seg.className='seg';seg.style.flex=BUDGET[i];
-    seg.innerHTML=`<i></i><span class="sl2">${n.replace('&','&amp;')}</span>`;seg.title=n;
-    seg.onclick=e=>{const r=seg.getBoundingClientRect();const f=(e.clientX-r.left)/r.width;go(idxs[Math.min(idxs.length-1,Math.floor(f*idxs.length))])};
+    const seg=document.createElement('div');seg.className='seg';seg.style.flex=BUDGET[i];seg.innerHTML='<i></i>';
     scrub.appendChild(seg);return {seg,idxs};
   });
 
-  /* slide list */
+  /* slide list for questions (key E) */
   const epsD=document.getElementById('epsD');
+  const grpOf=s=>s.dataset.sec!==undefined?(+s.dataset.sec+1)+'. '+SECS[+s.dataset.sec]:s.dataset.grp;
+  const numOf=i=>i<MAIN?pad(i+1):'A'+(i-MAIN+1);
   let html='',last=null;
   slides.forEach((s,i)=>{
-    const sec=s.dataset.sec;
-    if(sec!==last){html+=`<h4>${(+sec+1)+'. '+SECS[+sec].replace('&','&amp;')}</h4>`;last=sec}
-    html+=`<button class="ep" data-i="${i}"><span class="n">${pad(i+1)}</span><span>${s.dataset.title}</span></button>`;
+    const g=grpOf(s);
+    if(g!==last){html+=`<h4>${g.replace('&','&amp;')}</h4>`;last=g}
+    html+=`<button class="ep" data-i="${i}"><span class="n">${numOf(i)}</span><span>${s.dataset.title}</span></button>`;
   });
   epsD.innerHTML=html;
-  epsD.addEventListener('click',e=>{const b=e.target.closest('.ep');if(b){go(+b.dataset.i);toggle(epsD,'bEps',false)}});
+  epsD.addEventListener('click',e=>{const b=e.target.closest('.ep');if(b){go(+b.dataset.i);toggle(epsD,false)}});
 
   /* count-up numbers */
   function countUp(s){
@@ -1424,7 +1267,6 @@ kbd{font:600 16px/1 var(--sans);color:var(--muted);border:1px solid #3A3E4E;bord
   }
 
   function go(n){
-    if(openSheet)closeSheet();
     n=Math.max(0,Math.min(slides.length-1,n));
     const prev=slides[cur];
     slides.forEach((s,i)=>s.classList.toggle('past',i<n));
@@ -1438,24 +1280,26 @@ kbd{font:600 16px/1 var(--sans);color:var(--muted);border:1px solid #3A3E4E;bord
   }
 
   function update(){
-    const s=slides[cur], sec=s.dataset.sec, hero=s.classList.contains('hero');
+    const s=slides[cur], sec=s.dataset.sec, inPart=sec!==undefined;
     segs.forEach(({seg,idxs})=>{
       const fill=seg.querySelector('i');
       if(cur>idxs[idxs.length-1])fill.style.width='100%';
       else if(cur<idxs[0])fill.style.width='0%';
       else fill.style.width=((idxs.indexOf(cur)+1)/idxs.length*100)+'%';
     });
+    const k=stage.getBoundingClientRect().width/1920||1, sr=scrub.getBoundingClientRect();
     const cs=segs.find(x=>x.idxs.includes(cur));
-    if(cs){const r=cs.seg.getBoundingClientRect(),sr=scrub.getBoundingClientRect(),k=stage.getBoundingClientRect().width/1920||1;
-      const f=(cs.idxs.indexOf(cur)+1)/cs.idxs.length;knob.style.left=((r.left-sr.left)+r.width*f)/k+'px';}
-    gtrk.classList.toggle('hide',hero);
+    if(cs){const r=cs.seg.getBoundingClientRect(),f=(cs.idxs.indexOf(cur)+1)/cs.idxs.length;knob.style.left=((r.left-sr.left)+r.width*f)/k+'px';}
+    else knob.style.left=(cur<segs[0].idxs[0]?0:sr.width/k)+'px';
+    gtrk.classList.toggle('hide',!inPart);
     document.getElementById('keyhint').classList.toggle('show',cur===0);
-    tbtns.forEach((b,i)=>b.classList.toggle('on',String(i)===sec));
-    const ab=tbtns[+sec];
-    if(ab){ind.style.left=(ab.offsetLeft+14)+'px';ind.style.width=(ab.offsetWidth-28)+'px';}
+    tlabs.forEach((t,i)=>t.classList.toggle('on',String(i)===sec));
+    const at=tlabs[+sec];
+    if(at){ind.style.left=(at.offsetLeft+14)+'px';ind.style.width=(at.offsetWidth-28)+'px';}
     if(shown!==cur){
       const dir=shown<0||cur>shown?1:-1;shown=cur;
-      document.getElementById('tc').innerHTML=`<b class="k" style="--dy:${dir*70}%">${pad(cur+1)}</b> / ${slides.length}`;
+      const tot=cur<MAIN?pad(MAIN):'A'+(slides.length-MAIN);
+      document.getElementById('tc').innerHTML=`<b class="k" style="--dy:${dir*70}%">${numOf(cur)}</b> / ${tot}`;
     }
     document.getElementById('bPrev').disabled=cur===0;
     document.getElementById('bNext').disabled=cur===slides.length-1;
@@ -1463,30 +1307,22 @@ kbd{font:600 16px/1 var(--sans);color:var(--muted);border:1px solid #3A3E4E;bord
   }
 
   /* controls */
-  function toggle(d,btnId,force){const open=force===undefined?!d.classList.contains('open'):force;d.classList.toggle('open',open);document.getElementById(btnId).setAttribute('aria-pressed',open)}
-  document.getElementById('bEps').onclick=()=>toggle(epsD,'bEps');
+  function toggle(d,force){const open=force===undefined?!d.classList.contains('open'):force;d.classList.toggle('open',open)}
   document.getElementById('bPrev').onclick=()=>go(cur-1);
   document.getElementById('bNext').onclick=()=>go(cur+1);
   function fs(){try{if(document.fullscreenElement)document.exitFullscreen();else{const r=document.documentElement.requestFullscreen&&document.documentElement.requestFullscreen();r&&r.catch&&r.catch(()=>{})}}catch(e){}}
   document.getElementById('bFs').onclick=fs;
   addEventListener('fullscreenchange',()=>setTimeout(()=>{fit();update()},60));
   stage.addEventListener('click',e=>{
-    const g=e.target.closest('[data-go]');if(g){const v=g.dataset.go;go(v==='next'?cur+1:+v);return}
-    const o=e.target.closest('[data-open]');if(o){openS(o.dataset.open,o);return}
-    if(e.target.closest('[data-close]')||e.target.classList.contains('sheet')){closeSheet()}
+    const g=e.target.closest('[data-go]');if(g){const v=g.dataset.go;go(v==='next'?cur+1:+v)}
   });
 
-  /* detail sheets */
-  function openS(id,from){
-    const sh=document.getElementById(id);if(!sh)return;
-    if(openSheet)openSheet.classList.remove('open');
-    openSheet=sh;opener=from||null;sh.classList.add('open');
-    const x=sh.querySelector('.x');x&&setTimeout(()=>x.focus({preventScroll:true}),60);
-  }
-  function closeSheet(){
-    if(!openSheet)return;openSheet.classList.remove('open');openSheet=null;
-    if(opener){try{opener.focus({preventScroll:true})}catch(e){}opener=null}
-  }
+  /* MoSCoW: click a letter, the list changes on the same slide */
+  const mo=document.getElementById('mosc');
+  if(mo){mo.querySelectorAll('.mtab').forEach(t=>t.addEventListener('click',()=>{
+    mo.querySelectorAll('.mtab').forEach(x=>x.classList.toggle('on',x===t));
+    mo.querySelectorAll('.mlist').forEach(l=>l.classList.toggle('on',l.dataset.b===t.dataset.b));
+  }))}
 
   /* wireframes: annotations and pins light each other up */
   stage.querySelectorAll('.an[data-p]').forEach(a=>{
@@ -1595,20 +1431,19 @@ kbd{font:600 16px/1 var(--sans);color:var(--muted);border:1px solid #3A3E4E;bord
   addEventListener('keydown',e=>{
     if(e.metaKey||e.ctrlKey||e.altKey)return;
     const k=e.key;
-    if(openSheet&&['Escape','ArrowRight','ArrowLeft','PageDown','PageUp',' '].includes(k)){e.preventDefault();closeSheet();return}
     if(['ArrowRight','PageDown',' '].includes(k)){e.preventDefault();go(cur+1)}
     else if(['ArrowLeft','PageUp'].includes(k)){e.preventDefault();go(cur-1)}
     else if(k==='Home')go(0);
     else if(k==='End')go(slides.length-1);
-    else if(k==='e'||k==='E')toggle(epsD,'bEps');
+    else if(k==='e'||k==='E')toggle(epsD);
     else if(k==='f'||k==='F')fs();
-    else if(k==='Escape')toggle(epsD,'bEps',false);
+    else if(k==='Escape')toggle(epsD,false);
   });
 
   /* swipe */
   let sx=null,sy=null;
   vp.addEventListener('touchstart',e=>{sx=e.touches[0].clientX;sy=e.touches[0].clientY},{passive:true});
-  vp.addEventListener('touchend',e=>{if(sx===null||openSheet)return;const dx=e.changedTouches[0].clientX-sx,dy=e.changedTouches[0].clientY-sy;if(Math.abs(dx)>60&&Math.abs(dx)>Math.abs(dy)*1.3)go(cur+(dx<0?1:-1));sx=null},{passive:true});
+  vp.addEventListener('touchend',e=>{if(sx===null)return;const dx=e.changedTouches[0].clientX-sx,dy=e.changedTouches[0].clientY-sy;if(Math.abs(dx)>60&&Math.abs(dx)>Math.abs(dy)*1.3)go(cur+(dx<0?1:-1));sx=null},{passive:true});
 
   /* hide the cursor when idle, like a video player */
   let idleT;

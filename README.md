@@ -8,8 +8,8 @@ Planning Products, final project · Maayan Nakav & Tal Shami · September 2026
 
 ## What's inside
 
-- 22 slides in six parts: Problem & Goal, Solution, Scope, Requirements, Screens, Learnings
-- Six click-open detail panels for questions: decisions, why this size, reach, all 19 requirements, metric definitions, quality and pricing
+- 20 slides in five parts: Problem & goal, Solution, Requirements, Scope & risks, Screens
+- 3 appendix slides for questions: decisions, reach, metric definitions
 - Working wireframes: the time picker, the genre filter and the run planner
 - One self-contained `index.html`, no build step and no dependencies
 
@@ -21,7 +21,6 @@ Planning Products, final project · Maayan Nakav & Tal Shami · September 2026
 | First / last slide | Home / End |
 | All slides | E |
 | Fullscreen | F |
-| Close a detail panel | Esc |
 | Link to a slide | add `#s12` to the URL |
 
 ## Run locally
